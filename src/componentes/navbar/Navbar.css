@@ -1,9 +1,14 @@
 .navbar{
   background-color: #1A1A2E;  
-  height: 10vh;
+
+}
+
+.navbar-toggler-icon {
+    filter: invert(1); 
 }
 
 .navbar a{
+  margin-top: 1em;
   text-decoration: none;
   color: #FFFFFF;
   margin-left: 1em;

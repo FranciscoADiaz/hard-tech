@@ -2,9 +2,8 @@ import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import { NavLink } from "react-router";
-import  "./Navbar.css"
+import "./Navbar.css"
 const NavbarC = () => {
-  
   return (
     <>
       <Navbar expand="lg" className="navbar">
@@ -28,13 +27,16 @@ const NavbarC = () => {
               <NavLink className="a" to="/Contacto">
                 Contacto
               </NavLink>
+              <NavLink className="a" to="/Carrito">
+                Carrito
+              </NavLink>
             </Nav>
 
             <Nav className="ms-auto">
-              <NavLink className="a" to="/iniciarSesion">
+              <NavLink className="a" to="/IniciarSesion">
                 Iniciar Sesion
               </NavLink>
-              <NavLink className="a" to="/registrarse">
+              <NavLink className="a" to="/Registrarse">
                 Registrarse
               </NavLink>
             </Nav>

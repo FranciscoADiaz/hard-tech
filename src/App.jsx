@@ -6,6 +6,7 @@ import NavbarC from "./componentes/navbar/NavbarC";
 import SobreNosotros from "./paginas/SobreNosotros";
 import Registrarse from "./paginas/Registrarse";
 import IniciarSesion from "./paginas/IniciarSesion";
+import Carrito from "./paginas/Carrito";
 
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
           <Route path="/SobreNosotros" element={<SobreNosotros />} />
           <Route path="/Registrarse" element={<Registrarse />} />
           <Route path="/IniciarSesion" element={<IniciarSesion />} />
+          <Route path="/Carrito" element={<Carrito />} />
         </Routes>
       </Router>
     </>
