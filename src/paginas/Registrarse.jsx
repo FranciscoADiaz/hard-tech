@@ -2,9 +2,9 @@ import React from 'react'
 
 const Registrarse = () => {
   return (
-    <div>
-      <h1 className="text-center">Registrarse</h1>
-    </div>
+    <>
+      <h1 className="text-center vh-100">Registrarse</h1>
+    </>
   );
 }
 
