@@ -2,10 +2,10 @@ import React from 'react'
 
 const Carrito = () => {
   return (
-    <div>
-      <h1>CARRITO</h1>
-    </div>
-  )
+    <>
+      <h1 className="text-center vh-100">CARRITO</h1>
+    </>
+  );
 }
 
 export default Carrito

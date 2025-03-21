@@ -2,10 +2,10 @@ import React from 'react'
 
 const Contacto = () => {
   return (
-    <div>
-      <h1 className='text-center'>contacto</h1>
-    </div>
-  )
+    <>
+      <h1 className="text-center vh-100">contacto</h1>
+    </>
+  );
 }
 
 export default Contacto

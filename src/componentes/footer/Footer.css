@@ -1,0 +1,21 @@
+footer{
+  background-color: #1A1A2E;
+  color: #FFFF;
+  font-family: "Roboto", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
+    padding: 1em;
+}
+
+.a{
+  color: #FFFF;
+  text-decoration: none;
+}
+.logo-footer{
+  padding-left: 2em;
+  width: 500px;
+}
+
