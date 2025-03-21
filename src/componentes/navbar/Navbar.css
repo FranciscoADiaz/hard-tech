@@ -1,0 +1,25 @@
+.navbar{
+  background-color: #1A1A2E;  
+
+}
+
+.navbar-toggler-icon {
+    filter: invert(1); 
+}
+
+.navbar a{
+  margin-top: 1em;
+  text-decoration: none;
+  color: #FFFFFF;
+  margin-left: 1em;
+font-family: "Roboto", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
+  
+}
+.navbar a:hover{
+    color: #8A2BE2;
+  }
