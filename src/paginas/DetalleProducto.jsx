@@ -15,21 +15,20 @@ const DetalleProducto = () => {
     description: "silla gamer silla gamer silla gamer",
     stock: 10,
     image:
-      "https://imgs.search.brave.com/O56I24RgUCG7-0dieMLllV-H_mW2wR3RuOjrewYp0jM/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9iYWxh/bXJ1c2guY29tL2Nk/bi9zaG9wL2ZpbGVz/L0JSLTkzMjgyMF8w/MV8xMDAwUFgud2Vi/cD92PTE3MDU1MTY4/MzAmd2lkdGg9MTAw/MA",
+      "https://imgs.search.brave.com/dE8JIbMdiZvOYt89P5ASp1LTApcxsZoN1g-FA6sLOOo/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9iYWxh/bXJ1c2guY29tL2Nk/bi9zaG9wL2ZpbGVz/L0JSLTkzMjgzN18w/MV8xMDAwUFgud2Vi/cD92PTE3MDU1MTY4/MjEmd2lkdGg9MTAw/MA",
   };
 
   return (
     <Container className="my-5">
       <Row>
         <Col md={6}>
-          <Card>
-            <Card.Img
-              variant="top"
+          <div className="image-container">
+            <img
               src={product.image}
               alt={product.name}
               className="product-image"
             />
-          </Card>
+          </div>
         </Col>
 
         <Col md={6}>

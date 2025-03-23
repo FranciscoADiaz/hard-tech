@@ -11,7 +11,7 @@ export default function Footer() {
           <div className="col-12 col-md-4 d-flex align-items-center justify-content-center">
             <NavLink to="/">
               <img
-                src="../../img/LogoHardTech.png"
+                src="https://i.ibb.co/605nwL8L/LOSO-SIN-FONDO-1.png"
                 alt="Logo HardTech"
                 className="logo-footer"
               />
