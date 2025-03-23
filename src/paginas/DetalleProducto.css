@@ -1,0 +1,36 @@
+body {
+  background-color: #B0B0B0;
+}
+
+.product-detail-title {
+  color: #8A2BE2;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.product-description {
+  color: #333;
+  font-size: 1.1rem;
+  line-height: 1.5;
+}
+
+.btn-agregar {
+  background-color: #8A2BE2;
+  color: #fff;
+  border: 2px solid #8A2BE2;
+  border-radius: 8px;
+  padding: 10px 20px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.btn-agregar:hover {
+  background-color: #fff;
+  color: #8A2BE2;
+  transform: scale(1.05);
+}
+
+.btn-agregar:active {
+  transform: scale(0.95);
+}
+
