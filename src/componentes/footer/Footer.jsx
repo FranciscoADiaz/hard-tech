@@ -23,7 +23,7 @@ export default function Footer() {
               <ul className="navbar-nav col-12 col-md-3  m-auto py-4 pl-4">
                 <li className="text-center navbar-nav ">
                   <NavLink
-                    className="fs-5 a"
+                    className="a"
                     to="https://www.instagram.com/"
                     target="_blank"
                   >
@@ -32,7 +32,7 @@ export default function Footer() {
                 </li>
                 <li className="text-center li">
                   <NavLink
-                    className="fs-5 a"
+                    className=" a"
                     to="https://www.facebook.com/?locale=es_LA"
                     target="_blank"
                   >
@@ -40,13 +40,13 @@ export default function Footer() {
                   </NavLink>
                 </li>
                 <li className="text-center ">
-                  <NavLink className="fs-5 a" to="https://x.com/" target="_blank">
+                  <NavLink className=" a" to="https://x.com/" target="_blank">
                     X
                   </NavLink>
                 </li>
                 <li className="text-center li">
                   <NavLink
-                    className="fs-5 a"
+                    className=" a"
                     to="https://www.tiktok.com/upload?lang=es"
                     target="_blank"
                   >
@@ -56,17 +56,17 @@ export default function Footer() {
               </ul>
               <ul class=" navbar-nav col-12 col-md-3 m-auto py-4 ">
                 <li className="text-center navbar-nav">
-                  <NavLink className="fs-5 a" to="#" target="_blank">
+                  <NavLink className=" a" to="#" target="_blank">
                     Terminos y Condiciones
                   </NavLink>
                 </li>
                 <li className="text-center">
-                  <NavLink className="fs-5 a" to="#" target="_blank">
+                  <NavLink className=" a" to="#" target="_blank">
                     Politica de Privacidad
                   </NavLink>
                 </li>
                 <li className="text-center ">
-                  <NavLink className="fs-5 a" to="#" target="_blank">
+                  <NavLink className=" a" to="#" target="_blank">
                     Cookies y Publicidad
                   </NavLink>
                 </li>

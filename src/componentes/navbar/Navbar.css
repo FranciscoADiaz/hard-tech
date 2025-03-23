@@ -21,6 +21,11 @@
     "wdth" 100;
   
 }
+
+.logoNavbar{
+  width: 10em;
+}
+
 .navbar a:hover{
     color: #8A2BE2;
   }

@@ -1,0 +1,25 @@
+.card img{
+  height:30vh;
+  object-fit: cover;
+}
+
+.boton-card{
+   background-color:#8A2BE2 ;
+    color: #FFFF; 
+    padding: 0.5em;
+    border-radius: 10%;
+    text-decoration: none;
+    
+}
+
+.boton-card:hover{
+   background-color:#B0B0B0 ;
+    color: #FFFF; 
+    padding: 0.5em;
+    border-radius: 10%;
+    text-decoration: none;
+}
+
+.cards{
+   border: 1px solid #8A2BE2;
+}

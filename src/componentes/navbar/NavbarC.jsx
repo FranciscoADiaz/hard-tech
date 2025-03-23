@@ -12,7 +12,7 @@ const NavbarC = () => {
             <img
               src="https://trello.com/1/cards/67d80f377ad55dc4df25d044/attachments/67db4a0f7016e440b82edf71/download/LOSO_SIN_FONDO_1.png"
               alt="Logo"
-              className="w-25"
+              className="logoNavbar"
             />
           </NavLink>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
