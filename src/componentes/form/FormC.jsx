@@ -6,6 +6,8 @@ import Swal from "sweetalert2";
 import { useNavigate } from "react-router";
 
 
+
+
 const FormC = ({ idPage }) => {
  
   const navigate = useNavigate();
@@ -164,6 +166,16 @@ const FormC = ({ idPage }) => {
       (user) => user.nombreUsuario === usuario
     );
 
+    // Valida que los campos no estén vacíos
+    if (!usuario || !contrasenia) {
+      return Swal.fire({
+        icon: "error",
+        title: "ERROR",
+        text: "Los campos usuario y contraseña no pueden estar vacíos.",
+      });
+    }
+    
+    // Valida que el usuario exista en el localStorage
     if (!usuarioExiste) {
       Swal.fire({
         icon: "error",
@@ -250,7 +262,6 @@ const FormC = ({ idPage }) => {
                 : handleChangeFormLogin
             }
           />
-          
         </Form.Group>
 
         {idPage === "Registrarse" && (
@@ -278,7 +289,9 @@ const FormC = ({ idPage }) => {
           </>
         )}
         <Button
-          variant="primary"
+          className="botones"
+          variant="botones"
+          
           type="submit"
           onClick={
             idPage === "Registrarse" ? registroUsuario : iniciarSesionUsuario
