@@ -5,7 +5,9 @@ const Registrarse = () => {
   return (
     <>
       <Container className="w-100">
-        <FormC idPage="Registrarse" />
+        
+            <FormC idPage="Registrarse" />
+         
       </Container>
     </>
   );
