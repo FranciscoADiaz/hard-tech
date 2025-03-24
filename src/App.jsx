@@ -4,13 +4,11 @@ import DetalleProducto from "./paginas/DetalleProducto";
 import Contacto from "./paginas/Contacto";
 import NavbarC from "./componentes/navbar/NavbarC";
 import SobreNosotros from "./paginas/SobreNosotros";
-import Registrarse from "./paginas/Registrarse";
-import IniciarSesion from "./paginas/IniciarSesion";
 import Carrito from "./paginas/Carrito";
 import Footer from "./componentes/footer/Footer";
 import "./App.css";
 import "./index.css";
-
+import Registrarse from "./paginas/Registrarse";
 
 
 function App() {
@@ -24,7 +22,6 @@ function App() {
             <Route path="/Contacto" element={<Contacto />} />
             <Route path="/SobreNosotros" element={<SobreNosotros />} />
             <Route path="/Registrarse" element={<Registrarse />} />
-            <Route path="/IniciarSesion" element={<IniciarSesion />} />
             <Route path="/Carrito" element={<Carrito />} />
             <Route path="/DetalleProducto/:id" element={<DetalleProducto />} />
           </Routes>

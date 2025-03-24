@@ -1,9 +1,12 @@
-import React from 'react'
+import FormC from "../componentes/form/FormC";
+import { Container } from "react-bootstrap";
 
 const Registrarse = () => {
   return (
     <>
-      <h1 className="text-center vh-100">Registrarse</h1>
+      <Container className="w-100">
+        <FormC idPage="Registrarse" />
+      </Container>
     </>
   );
 }
