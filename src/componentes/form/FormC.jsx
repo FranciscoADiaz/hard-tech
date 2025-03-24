@@ -1,9 +1,8 @@
-import { Container } from "react-bootstrap";
-import Button from "react-bootstrap/Button";
-import Form from "react-bootstrap/Form";
+
 import { useState } from "react";
 import Swal from "sweetalert2";
 import { useNavigate } from "react-router";
+import { Container, Row, Col, Form, Button } from "react-bootstrap";
 
 
 
