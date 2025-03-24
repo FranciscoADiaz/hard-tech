@@ -1,9 +1,8 @@
-import { Container } from "react-bootstrap";
-import Button from "react-bootstrap/Button";
-import Form from "react-bootstrap/Form";
+
 import { useState } from "react";
 import Swal from "sweetalert2";
 import { useNavigate } from "react-router";
+import { Container, Row, Col, Form, Button } from "react-bootstrap";
 
 
 
@@ -204,102 +203,111 @@ const FormC = ({ idPage }) => {
   };
 
   return (
-    <Container className="d-flex justify-content-center my-5 vh-100">
-      <Form className="w-50 text-center">
-        <Form.Group className="mb-3" controlId="formBasicEmail">
-          <Form.Label>Nombre de Usuario</Form.Label>
-          <Form.Control
-            type="text"
-            placeholder="Usuario"
-            value={
-              idPage === "Registrarse" ? registro.usuario : inicioSesion.usuario
-            }
-            onChange={
-              idPage === "Registrarse"
-                ? handleChangeFormRegister
-                : handleChangeFormLogin
-            }
-            name="usuario"
-            className={
-              errores.usuario ? "form-control is-invalid" : "form-control"
-            }
-          />
-          {errores.usuario && (
-            <Form.Text className="text-danger">Campo USUARIO vacio</Form.Text>
-          )}
-        </Form.Group>
+    <Container fluid className="d-flex justify-content-center my-5 vh-100">
+      <Row className="w-100 d-flex justify-content-center">
+        <Col xs={12} md={8} lg={6}>
+          <Form className="w-100 text-center">
+            <Form.Group className="mb-3" controlId="formBasicEmail">
+              <Form.Label>Nombre de Usuario</Form.Label>
+              <Form.Control
+                type="text"
+                placeholder="Usuario"
+                value={
+                  idPage === "Registrarse"
+                    ? registro.usuario
+                    : inicioSesion.usuario
+                }
+                onChange={
+                  idPage === "Registrarse"
+                    ? handleChangeFormRegister
+                    : handleChangeFormLogin
+                }
+                name="usuario"
+                className={
+                  errores.usuario ? "form-control is-invalid" : "form-control"
+                }
+              />
+              {errores.usuario && (
+                <Form.Text className="text-danger">
+                  Campo USUARIO vacio
+                </Form.Text>
+              )}
+            </Form.Group>
 
-        {idPage === "Registrarse" && (
-          <Form.Group className="mb-3" controlId="formBasicEmail">
-            <Form.Label>Email del Usuario</Form.Label>
-            <Form.Control
-              type="email"
-              name="email"
-              placeholder="usuario@outlook.com"
-              value={registro.email}
-              onChange={handleChangeFormRegister}
-            />
-            <Form.Text className="text-muted">
-              Nunca compartiremos tu e-mail con nadie
-            </Form.Text>
-          </Form.Group>
-        )}
+            {idPage === "Registrarse" && (
+              <Form.Group className="mb-3" controlId="formBasicEmail">
+                <Form.Label>Email del Usuario</Form.Label>
+                <Form.Control
+                  type="email"
+                  name="email"
+                  placeholder="usuario@outlook.com"
+                  value={registro.email}
+                  onChange={handleChangeFormRegister}
+                />
+                <Form.Text className="text-muted">
+                  Nunca compartiremos tu e-mail con nadie
+                </Form.Text>
+              </Form.Group>
+            )}
 
-        <Form.Group className="mb-3" controlId="formBasicPassword">
-          <Form.Label>Contraseña</Form.Label>
-          <Form.Control
-            type="password"
-            placeholder="********"
-            name="contrasenia"
-            value={
-              idPage === "Registrarse"
-                ? registro.contrasenia
-                : inicioSesion.contrasenia
-            }
-            onChange={
-              idPage === "Registrarse"
-                ? handleChangeFormRegister
-                : handleChangeFormLogin
-            }
-          />
-        </Form.Group>
-
-        {idPage === "Registrarse" && (
-          <>
             <Form.Group className="mb-3" controlId="formBasicPassword">
-              <Form.Label>Repetir Contraseña</Form.Label>
+              <Form.Label>Contraseña</Form.Label>
               <Form.Control
                 type="password"
                 placeholder="********"
-                name="repContrasenia"
-                value={registro.repContrasenia}
-                onChange={handleChangeFormRegister}
+                name="contrasenia"
+                value={
+                  idPage === "Registrarse"
+                    ? registro.contrasenia
+                    : inicioSesion.contrasenia
+                }
+                onChange={
+                  idPage === "Registrarse"
+                    ? handleChangeFormRegister
+                    : handleChangeFormLogin
+                }
               />
             </Form.Group>
 
-            <Form.Group className="mb-3" controlId="formBasicCheckbox">
-              <Form.Check
-                type="checkbox"
-                label="Aceptar terminos y condiciones"
-                name="check"
-                value={registro.check}
-                onChange={handleChangeFormRegister}
-              />
-            </Form.Group>
-          </>
-        )}
-        <Button
-          className="botones"
-          variant="botones"
-          
-          type="submit"
-          onClick={
-            idPage === "Registrarse" ? registroUsuario : iniciarSesionUsuario
-          }
-        >
-          {idPage === "Registrarse" ? "Registrarse" : "Iniciar Sesión"}
-        </Button>
-      </Form>
+            {idPage === "Registrarse" && (
+              <>
+                <Form.Group className="mb-3" controlId="formBasicPassword">
+                  <Form.Label>Repetir Contraseña</Form.Label>
+                  <Form.Control
+                    type="password"
+                    placeholder="********"
+                    name="repContrasenia"
+                    value={registro.repContrasenia}
+                    onChange={handleChangeFormRegister}
+                  />
+                </Form.Group>
+
+                <Form.Group className="mb-3" controlId="formBasicCheckbox">
+                  <Form.Check
+                    type="checkbox"
+                    label="Aceptar terminos y condiciones"
+                    name="check"
+                    value={registro.check}
+                    onChange={handleChangeFormRegister}
+                  />
+                </Form.Group>
+              </>
+            )}
+            <Button
+              className="botones"
+              variant="botones"
+              type="submit"
+              onClick={
+                idPage === "Registrarse"
+                  ? registroUsuario
+                  : iniciarSesionUsuario
+              }
+            >
+              {idPage === "Registrarse" ? "Registrarse" : "Iniciar Sesión"}
+            </Button>
+          </Form>
+        </Col>
+      </Row>
     </Container>
   );
 };
