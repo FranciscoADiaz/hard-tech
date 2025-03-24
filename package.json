@@ -2,7 +2,7 @@
   "name": "hard-tech",
   "private": true,
   "version": "0.0.0",
-  "homepage": "https://FranciscoADiaz/hard-tech.git",
+  "homepage": "https://franciscoadiaz.github.io/hard-tech/",
   "type": "module",
   "scripts": {
     "dev": "vite",
