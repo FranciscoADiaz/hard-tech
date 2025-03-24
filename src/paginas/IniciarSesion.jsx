@@ -1,9 +1,12 @@
 import FormC from "../componentes/form/FormC";
+import { Container } from "react-bootstrap";
 
 const IniciarSesion = () => {
   return (
     <>
-      <FormC idPage="login" />
+      <Container className="w-100" >
+        <FormC idPage="login" />
+      </Container>
     </>
   );
 };
