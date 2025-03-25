@@ -4,14 +4,36 @@ body {
 
 .product-detail-title {
   color: #8A2BE2;
-  font-size: 2rem;
+  font-size: 2.5rem;
   font-weight: bold;
+  margin-bottom: 20px;
+  font-family: 'Orbitron', sans-serif;
 }
 
 .product-description {
   color: #333;
-  font-size: 1.1rem;
-  line-height: 1.5;
+  font-size: 1.3rem;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.product-detail-price,
+.product-detail-category,
+.product-detail-id {
+  font-family: 'Montserrat', sans-serif;
+  color: #333;
+  font-weight: 500;
+  font-size: 1.3rem;
+  margin-bottom: 15px;
+}
+
+.product-detail-image {
+  width: 100%;
+  height: 400px;
+  object-fit: contain;
+  border-radius: 15px;
+  background-color: #fff;
 }
 
 .btn-agregar {
@@ -19,9 +41,11 @@ body {
   color: #fff;
   border: 2px solid #8A2BE2;
   border-radius: 8px;
-  padding: 10px 20px;
+  padding: 15px 25px;
+  font-size: 1.2rem;
   font-weight: bold;
   transition: all 0.3s ease;
+  font-family: 'Orbitron', sans-serif;
 }
 
 .btn-agregar:hover {
@@ -33,27 +57,3 @@ body {
 .btn-agregar:active {
   transform: scale(0.95);
 }
-
-.product-image {
-  border: 4px solid #8A2BE2;
-  border-radius: 10px;
-  padding: 0;             
-  margin: 0;              
-  display: block;         
-  background-color: #fff;
-}
-
-.image-container {
-  width: 100%;
-  text-align: center;
-}
-
-.product-image {
-  max-width: 100%;
-  height: auto;
-  border: 4px solid #8A2BE2;
-  border-radius: 10px;
-  object-fit: contain;
-}
-
-

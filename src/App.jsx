@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import PaginaPrincipal from "./paginas/PaginaPrincipal";
 import DetalleProducto from "./paginas/DetalleProducto";
 import Contacto from "./paginas/Contacto";
@@ -11,26 +11,21 @@ import "./index.css";
 import Registrarse from "./paginas/Registrarse";
 import IniciarSesion from "./paginas/IniciarSesion";
 
-
 function App() {
   return (
-    <>
-      <div className="fondo-general">
-        <Router>
-          <NavbarC />
-          <Routes>
-            <Route path="/" element={<PaginaPrincipal />} />
-            <Route path="/Contacto" element={<Contacto />} />
-            <Route path="/SobreNosotros" element={<SobreNosotros />} />
-            <Route path="/Registrarse" element={<Registrarse />} />
-            <Route path="/IniciarSesion" element={<IniciarSesion />} />
-            <Route path="/Carrito" element={<Carrito />} />
-            <Route path="/DetalleProducto/:id" element={<DetalleProducto />} />
-          </Routes>
-          <Footer />
-        </Router>
-      </div>
-    </>
+    <BrowserRouter basename="/hard-tech">
+      <NavbarC />
+      <Routes>
+        <Route path="/" element={<PaginaPrincipal />} />
+        <Route path="/Contacto" element={<Contacto />} />
+        <Route path="/SobreNosotros" element={<SobreNosotros />} />
+        <Route path="/Registrarse" element={<Registrarse />} />
+        <Route path="/IniciarSesion" element={<IniciarSesion />} />
+        <Route path="/Carrito" element={<Carrito />} />
+        <Route path="/producto/:id" element={<DetalleProducto />} />
+      </Routes>
+      <Footer />
+    </BrowserRouter>
   );
 }
 

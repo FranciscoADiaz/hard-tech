@@ -10,7 +10,7 @@ const NavbarC = () => {
       <Container>
         <NavLink to="/">
           <img
-            src="https://i.ibb.co/605nwL8L/LOSO-SIN-FONDO-1.png"  
+            src="https://i.ibb.co/605nwL8L/LOSO-SIN-FONDO-1.png"
             alt="Logo"
             className="logo-navbar"
           />
@@ -19,12 +19,25 @@ const NavbarC = () => {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ms-auto nav-links">
-            <NavLink to="/" className="nav-item">Inicio</NavLink>
-            <NavLink to="/SobreNosotros" className="nav-item">Sobre Nosotros</NavLink>
-            <NavLink to="/Contacto" className="nav-item">Contacto</NavLink>
-            <NavLink to="/Carrito" className="nav-item">Carrito</NavLink>
-            <NavLink to="/IniciarSesion" className="nav-item">Iniciar Sesión</NavLink>
-            <NavLink to="/Registrarse" className="nav-item">Registrarse</NavLink>
+            {/* Secciones principales */}
+            <NavLink to="/" className="nav-item">
+              Inicio
+            </NavLink>
+            <NavLink to="/SobreNosotros" className="nav-item">
+              Sobre Nosotros
+            </NavLink>
+            <NavLink to="/Carrito" className="nav-item">
+              Carrito
+            </NavLink>
+
+            <div className="auth-links">
+              <NavLink to="/IniciarSesion" className="nav-item">
+                Iniciar Sesión
+              </NavLink>
+              <NavLink to="/Registrarse" className="nav-item">
+                Registrarse
+              </NavLink>
+            </div>
           </Nav>
         </Navbar.Collapse>
       </Container>
@@ -33,4 +46,3 @@ const NavbarC = () => {
 };
 
 export default NavbarC;
-
