@@ -1,8 +1,10 @@
 import { Col, Container, Row } from "react-bootstrap";
+import { useEffect } from "react";
+import "./PaginaPrincipal.css";
 import Carousell from "../componentes/carousell/Carousell";
-import Cards from "../componentes/cards/Cards";
-import { useEffect, useState } from "react";
 import Buscador from "../componentes/buscador/Buscador";
+import Cards from "../componentes/cards/Cards";
+
 const HomePage = () => {
   const productos = [
     {
@@ -28,7 +30,7 @@ const HomePage = () => {
       titulo: "Teclado Mecánico Redragon",
       descripcion: "Switches Red, RGB",
       imagen:
-        "https://twister.com.ar/wp-content/uploads/2020/02/K552-BB-2.png.webp",
+        "https://imagenes.compragamer.com/productos/compragamer_Imganen_general_44144_Teclado_Mecanico_Asus_ROG_Strix_XA12_Scope_II_Switch_RX_Red_RGB_1d86f117-grn.jpg",
       precio: 25000,
       categoria: "perifericos",
     },
@@ -119,7 +121,7 @@ const HomePage = () => {
       descripcion:
         "Laptop de 15.6 pulgadas, procesador Intel Core i7, 16GB RAM y 512GB SSD.",
       imagen:
-        "https://gselectronic.com.ar/wp-content/uploads/2024/03/HP-Pavilion-Laptop-15-eg0048nr-1.jpg",
+        "https://imagenes.compragamer.com/productos/compragamer_Imganen_general_44049_Notebook_HP_Victus_15-FA0033_15.6__i5-12450H_8GB_SSD_512GB_RTX3050_FHD_144Hz_Win11_5782adea-grn.jpg",
       precio: 899.999,
       categoria: "Laptops",
     },
@@ -157,36 +159,19 @@ const HomePage = () => {
     },
   ];
 
-  const obtenerProductos = async () => {
-    try {
-      const productosApi = await fetch("productos");
-      const data = await productosApi.json();
-      localStorage.setItem("productos", JSON.stringify(data));
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
   useEffect(() => {
-    obtenerProductos();
+    localStorage.setItem("productos", JSON.stringify(productos));
   }, []);
 
   return (
     <>
       <Carousell />
-      <Buscador/>
-      <Container>
-        <Row className="px-4 my-5">
+      <Buscador />
+      <Container fluid className="home-container">
+        <Row className="px-4 my-5 gx-3 gy-4">
           {productos.map((producto) => (
             <Col sm="12" md="6" lg="4" key={producto.id} className="my-3">
-              <Cards
-                image={producto.imagen}
-                alt={producto.descripcion}
-                description={producto.descripcion}
-                idProducto={producto.id}
-                titulo={producto.titulo}
-                precio={producto.precio}
-              />
+              <Cards producto={producto} />
             </Col>
           ))}
         </Row>

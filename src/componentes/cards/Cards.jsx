@@ -1,26 +1,26 @@
-
-import Card from "react-bootstrap/Card";
-import { Link } from "react-router";
+import { useNavigate } from "react-router-dom";
 import "./Cards.css";
 
-const Cards = (producto) => {
+const Cards = ({ producto }) => {
+  const navigate = useNavigate();
+
   return (
-    <>
-      <Card style={{ width: "18rem" }} className="cards">
-        <Card.Img variant="top" src={producto.image} alt={producto.alt} />
-        <Card.Body>
-          <Card.Title className="text-truncate">{producto.titulo}</Card.Title>
-          <Card.Text> ${producto.precio} </Card.Text>
-          <Card.Text className="text-truncate">
-            {" "}
-            {producto.description}{" "}
-          </Card.Text>
-          <div className="text-center">
-            <Link className="boton-card">Ver mas</Link>
-          </div>
-        </Card.Body>
-      </Card>
-    </>
+    <div className="home-product-card">
+      <img
+        src={producto.imagen}
+        alt={producto.descripcion}
+        className="home-product-image"
+      />
+      <h3 className="home-product-title">{producto.titulo}</h3>
+      <p className="home-product-description">{producto.descripcion}</p>
+      <p className="home-product-price">Precio: ${producto.precio}</p>
+      <button
+        className="home-btn-agregar"
+        onClick={() => navigate(`/producto/${producto.id}`)}
+      >
+        Ver Detalle
+      </button>
+    </div>
   );
 };
 
