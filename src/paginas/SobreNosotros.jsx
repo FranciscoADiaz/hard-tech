@@ -5,7 +5,7 @@ const SobreNosotros = () => {
   const integrantesCol1 = [
     { nombre: "Nicolas", img: "https://i.ibb.co/Kj036HY9/Nico.jpg" },
     { nombre: "Matias", img: "https://i.ibb.co/nq2d1Mjb/Matias.jpg" },
-    { nombre: "Fransico", img: "https://i.ibb.co/4wH6zpMQ/francisco.png" },
+    { nombre: "Francisco", img: "https://i.ibb.co/jZQgpmGq/francisco.png" },
   ];
 
   const integrantesCol2 = [
