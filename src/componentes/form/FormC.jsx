@@ -1,14 +1,10 @@
-
 import { useState } from "react";
 import Swal from "sweetalert2";
 import { useNavigate } from "react-router";
 import { Container, Row, Col, Form, Button } from "react-bootstrap";
-
-
-
+import "./FormC.css";
 
 const FormC = ({ idPage }) => {
- 
   const navigate = useNavigate();
   const [errores, setErrores] = useState({});
 
@@ -82,12 +78,12 @@ const FormC = ({ idPage }) => {
     // Validar contraseña
     const passwordRegex = /^(?=.*[A-Z])(?=.*\d).{8,}$/;
     if (!contrasenia.trim()) {
-       Swal.fire({
-         icon: "error",
-         title: "ERROR",
-         text: "Tenés que ingresar una contraseña",
-       });
-       return;
+      Swal.fire({
+        icon: "error",
+        title: "ERROR",
+        text: "Tenés que ingresar una contraseña",
+      });
+      return;
     } else if (!passwordRegex.test(contrasenia)) {
       Swal.fire({
         icon: "error",
@@ -173,7 +169,7 @@ const FormC = ({ idPage }) => {
         text: "Los campos usuario y contraseña no pueden estar vacíos.",
       });
     }
-    
+
     // Valida que el usuario exista en el localStorage
     if (!usuarioExiste) {
       Swal.fire({
@@ -203,10 +199,10 @@ const FormC = ({ idPage }) => {
   };
 
   return (
-    <Container fluid className="d-flex justify-content-center my-5 vh-100">
+    <Container fluid className="d-flex justify-content-center my-5">
       <Row className="w-100 d-flex justify-content-center">
         <Col xs={12} md={8} lg={6}>
-          <Form className="w-100 text-center">
+          <Form className="w-100 text-center letras-config">
             <Form.Group className="mb-3" controlId="formBasicEmail">
               <Form.Label>Nombre de Usuario</Form.Label>
               <Form.Control
@@ -240,7 +236,7 @@ const FormC = ({ idPage }) => {
                 <Form.Control
                   type="email"
                   name="email"
-                  placeholder="usuario@outlook.com"
+                  placeholder="usuario@gmail.com"
                   value={registro.email}
                   onChange={handleChangeFormRegister}
                 />
@@ -294,8 +290,8 @@ const FormC = ({ idPage }) => {
               </>
             )}
             <Button
-              className="botones"
-              variant="botones"
+              className="botones boton-config"
+              variant="botones boton-config"
               type="submit"
               onClick={
                 idPage === "Registrarse"
