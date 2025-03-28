@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import PaginaPrincipal from "./paginas/PaginaPrincipal";
 import DetalleProducto from "./paginas/DetalleProducto";
 import Contacto from "./paginas/Contacto";
@@ -6,14 +6,14 @@ import NavbarC from "./componentes/navbar/NavbarC";
 import SobreNosotros from "./paginas/SobreNosotros";
 import Carrito from "./paginas/Carrito";
 import Footer from "./componentes/footer/Footer";
-import "./App.css";
-import "./index.css";
 import Registrarse from "./paginas/Registrarse";
 import IniciarSesion from "./paginas/IniciarSesion";
+import "./App.css";
+import "./index.css";
 
 function App() {
   return (
-    <BrowserRouter basename="/hard-tech">
+    <Router basename="/hard-tech">
       <NavbarC />
       <Routes>
         <Route path="/" element={<PaginaPrincipal />} />
@@ -25,7 +25,7 @@ function App() {
         <Route path="/producto/:id" element={<DetalleProducto />} />
       </Routes>
       <Footer />
-    </BrowserRouter>
+    </Router>
   );
 }
 

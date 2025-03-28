@@ -1,4 +1,3 @@
-
 import "./Buscador.css";
 
 const Buscador = () => {

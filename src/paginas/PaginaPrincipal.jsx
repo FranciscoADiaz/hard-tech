@@ -59,7 +59,7 @@ const HomePage = () => {
       descripcion:
         "La silla gamer Vertagear SL5800 suele tener un diseño ergonómico, con un acabado en color negro y detalles en carbono. Suele estar equipada con características como reposabrazos ajustables, soporte lumbar y un alto respaldo que proporciona comodidad durante largas sesiones de juego. La base es generalmente robusta para soportar un peso máximo de hasta 113 kg. Además, puede estar tapizada con materiales transpirables que favorecen la ventilación. ",
       imagen:
-        "https://imagenes.compragamer.com/productos/compragamer_Imganen_general_43255_Silla_Gamer_Vertagear_SL5800_HygennX_Carbon_Black_Ergonomic__Peso_MAX._113kg__0e8d00e8-grn.jpg",
+        "https://imagenes.compragamer.com/productos/compragamer_Imganen_general_43253_Silla_Gamer_Vertagear_SL5800_HygennX_Black_White_Ergonomic__Peso_MAX._113kg__d54fd7f9-grn.jpg",
       precio: 523.99,
       categoria: "Sillas",
     },
@@ -143,7 +143,7 @@ const HomePage = () => {
       descripcion:
         "El ASUS ROG Raikiri Pro OLED Wireless es un control premium diseñado para PC y Xbox (con conexión por cable). ",
       imagen:
-        "https://imagenes.compragamer.com/productos/compragamer_Imganen_general_41806_Joystick_ASUS_ROG_Raikiri_Pro_OLED_Wireless_2.4Ghz_Bluetooth_PC____XBOX_solo_cableado_4336b8fb-grn.jpg",
+        "https://imagenes.compragamer.com/productos/compragamer_Imganen_general_37815_Joystick_ASUS_ROG_Raikiri_Pro_OLED_Wireless_2.4Ghz_Bluetooth_PC____XBOX_solo_cableado_0594364d-grn.jpg",
       precio: 231.955,
       categoria: "joystick",
     },

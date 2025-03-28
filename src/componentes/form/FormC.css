@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Orbitron:wght@400..900&display=swap');
+
+body {
+  background-color: #B0B0B0;
+}
+
+.letras-config {
+  color: #8A2BE2;
+  font-family: "Orbitron", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+}
+
+button.boton-config {
+  background-color: #8A2BE2;
+  color: #fff;
+  border: 2px solid #8A2BE2;
+  border-radius: 4px solid #8A2BE2;
+  padding: 5px 15px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  font-family: 'Orbitron', sans-serif;
+}
+
+button.boton-config:hover {
+  background-color: #fff;
+  color: #8A2BE2;
+  transform: scale(1.05);
+}
+
+button.boton-config:active {
+  transform: scale(0.95);
+}
+
+
