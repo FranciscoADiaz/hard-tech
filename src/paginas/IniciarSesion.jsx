@@ -1,4 +1,4 @@
-import FormC from "../componentes/form/FormC";
+import FormC from "../componentes/form/FormularioLogin";
 import { Container } from "react-bootstrap";
 
 const IniciarSesion = () => {
