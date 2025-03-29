@@ -274,7 +274,6 @@ const FormC = ({ idPage }) => {
                     placeholder="********"
                     name="repContrasenia"
                     value={registro.repContrasenia}
-                    onChange={handleChangeFormRegister}
                   />
                 </Form.Group>
 

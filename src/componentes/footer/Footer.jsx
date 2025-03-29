@@ -58,13 +58,17 @@ export default function Footer() {
           <div className="col-12 col-md-4">
             <ul className="footer-links">
               <li>
-                <a href="#">Términos y Condiciones</a>
+                <a href="/hard-tech/ruta-que-no-existe">
+                  Términos y Condiciones
+                </a>
               </li>
               <li>
-                <a href="#">Política de Privacidad</a>
+                <a href="/hard-tech/ruta-que-no-existe">
+                  Política de Privacidad
+                </a>
               </li>
               <li>
-                <a href="#">Cookies y Publicidad</a>
+                <a href="/hard-tech/ruta-que-no-existe">Cookies y Publicidad</a>
               </li>
             </ul>
           </div>

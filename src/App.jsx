@@ -8,21 +8,27 @@ import Carrito from "./paginas/Carrito";
 import Footer from "./componentes/footer/Footer";
 import Registrarse from "./paginas/Registrarse";
 import IniciarSesion from "./paginas/IniciarSesion";
+import Pagina404 from "./paginas/Pagina404";
 import "./App.css";
 import "./index.css";
 
 function App() {
   return (
-    <Router basename="/hard-tech">
+    <Router basename="/hard-tech/">
       <NavbarC />
       <Routes>
         <Route path="/" element={<PaginaPrincipal />} />
+        <Route path="/user" element={<PaginaPrincipal />} />
+        <Route path="/admin" element={<PaginaPrincipal />} />
+        <Route path="/user/Carrito" element={<Carrito />} />
         <Route path="/Contacto" element={<Contacto />} />
         <Route path="/SobreNosotros" element={<SobreNosotros />} />
         <Route path="/Registrarse" element={<Registrarse />} />
         <Route path="/IniciarSesion" element={<IniciarSesion />} />
-        <Route path="/Carrito" element={<Carrito />} />
         <Route path="/producto/:id" element={<DetalleProducto />} />
+        <Route path="/user/producto/:id" element={<DetalleProducto />} />
+        <Route path="/admin/producto/:id" element={<DetalleProducto />} />
+        <Route path="*" element={<Pagina404 />} />
       </Routes>
       <Footer />
     </Router>

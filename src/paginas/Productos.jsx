@@ -1,11 +1,5 @@
-
-
 const Productos = () => {
-  return (
-    <>
-      
-    </>
-  )
-}
+  return <></>;
+};
 
-export default Productos
+export default Productos;
