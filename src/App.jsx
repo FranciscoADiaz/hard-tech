@@ -18,11 +18,11 @@ function App() {
       <NavbarC />
       <Routes>
         <Route path="/" element={<PaginaPrincipal />} />
+        <Route path="/Carrito" element={<Carrito />} />
         <Route path="/Contacto" element={<Contacto />} />
         <Route path="/SobreNosotros" element={<SobreNosotros />} />
         <Route path="/Registrarse" element={<Registrarse />} />
         <Route path="/IniciarSesion" element={<IniciarSesion />} />
-        <Route path="/Carrito" element={<Carrito />} />
         <Route path="/producto/:id" element={<DetalleProducto />} />
         <Route path="*" element={<Pagina404 />} />
       </Routes>
