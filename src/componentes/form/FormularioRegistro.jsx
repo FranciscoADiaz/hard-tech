@@ -1,4 +1,3 @@
-// src/componentes/form/FormularioRegistro.jsx
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Container, Row, Col, Form, Button } from "react-bootstrap";
