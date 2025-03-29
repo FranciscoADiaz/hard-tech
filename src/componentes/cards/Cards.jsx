@@ -4,6 +4,11 @@ import "./Cards.css";
 const Cards = ({ producto }) => {
   const navigate = useNavigate();
 
+  const handleVerDetalle = () => {
+    localStorage.setItem("productoSeleccionado", JSON.stringify(producto));
+    navigate(`/producto/${producto.id}`);
+  };
+
   return (
     <div className="home-product-card">
       <img
@@ -14,10 +19,7 @@ const Cards = ({ producto }) => {
       <h3 className="home-product-title">{producto.titulo}</h3>
       <p className="home-product-description">{producto.descripcion}</p>
       <p className="home-product-price">Precio: ${producto.precio}</p>
-      <button
-        className="home-btn-agregar"
-        onClick={() => navigate(`/producto/${producto.id}`)}
-      >
+      <button className="home-btn-agregar" onClick={handleVerDetalle}>
         Ver Detalle
       </button>
     </div>

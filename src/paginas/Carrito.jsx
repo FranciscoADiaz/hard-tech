@@ -1,117 +1,170 @@
-// src/paginas/Carrito.jsx
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
+import { Container, Table, Button, Form } from "react-bootstrap";
 import Swal from "sweetalert2";
 import "./Carrito.css";
 
 const Carrito = () => {
   const [productos, setProductos] = useState([]);
-  const [cantidades, setCantidades] = useState({});
+  const [total, setTotal] = useState(0);
+  const [totalItems, setTotalItems] = useState(0);
 
-  useEffect(() => {
-    const productosGuardados =
-      JSON.parse(localStorage.getItem("carrito")) || [];
-    setProductos(productosGuardados);
+  const obtenerProductos = () => {
+    const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+    const conCantidad = carrito.map((prod) => ({
+      ...prod,
+      cantidad: prod.cantidad || 1,
+    }));
+    setProductos(conCantidad);
+  };
 
-    const cantidadesIniciales = {};
-    productosGuardados.forEach((p) => {
-      cantidadesIniciales[p.id] = 1;
-    });
-    setCantidades(cantidadesIniciales);
-  }, []);
-
-  const handleCantidadChange = (id, value) => {
-    setCantidades({ ...cantidades, [id]: parseInt(value) });
+  const calcularTotales = () => {
+    const totalFinal = productos.reduce(
+      (acc, prod) => acc + prod.precio * prod.cantidad,
+      0
+    );
+    const itemsFinal = productos.reduce((acc, prod) => acc + prod.cantidad, 0);
+    setTotal(totalFinal);
+    setTotalItems(itemsFinal);
   };
 
   const eliminarProducto = (id) => {
     Swal.fire({
       title: "¿Eliminar este producto?",
-      text: "Esta acción no se puede deshacer.",
       icon: "warning",
       showCancelButton: true,
-      confirmButtonColor: "#8A2BE2",
-      cancelButtonColor: "#d33",
-      confirmButtonText: "Sí, eliminar",
-      cancelButtonText: "Cancelar",
-    }).then((result) => {
-      if (result.isConfirmed) {
-        const nuevosProductos = productos.filter((p) => p.id !== id);
-        setProductos(nuevosProductos);
-        localStorage.setItem("carrito", JSON.stringify(nuevosProductos));
-        Swal.fire("Eliminado", "El producto fue eliminado.", "success");
+      confirmButtonText: "Sí",
+      cancelButtonText: "No",
+    }).then((res) => {
+      if (res.isConfirmed) {
+        const actualizado = productos.filter((p) => p.id !== id);
+        setProductos(actualizado);
+        localStorage.setItem("carrito", JSON.stringify(actualizado));
+        Swal.fire("Eliminado", "El producto fue eliminado", "success");
       }
     });
   };
 
-  const totalFinal = productos.reduce((acc, prod) => {
-    const cantidad = cantidades[prod.id] || 1;
-    return acc + prod.price * cantidad;
-  }, 0);
-
-  const handleComprar = () => {
-    Swal.fire({
-      icon: "success",
-      title: "¡Gracias por tu compra!",
-      text: "Recibirás un email con el comprobante.",
-    });
-    setProductos([]);
-    localStorage.removeItem("carrito");
+  const cambiarCantidad = (id, nuevaCantidad) => {
+    const actualizado = productos.map((p) =>
+      p.id === id ? { ...p, cantidad: parseInt(nuevaCantidad) } : p
+    );
+    setProductos(actualizado);
+    localStorage.setItem("carrito", JSON.stringify(actualizado));
   };
 
-  if (productos.length === 0) {
-    return (
-      <div className="carrito-vacio-container">
-        <h2 className="carrito-vacio">Tu carrito está vacío 🛒</h2>
-        <p className="carrito-vacio-texto">
-          Agregá productos desde la página principal
-        </p>
-      </div>
-    );
-  }
+  const vaciarCarrito = () => {
+    Swal.fire({
+      title: "¿Vaciar el carrito?",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonText: "Sí, vaciar",
+      cancelButtonText: "Cancelar",
+    }).then((res) => {
+      if (res.isConfirmed) {
+        localStorage.removeItem("carrito");
+        setProductos([]);
+        setTotal(0);
+        setTotalItems(0);
+        Swal.fire("Listo", "Tu carrito fue vaciado", "success");
+      }
+    });
+  };
+
+  const confirmarCompra = () => {
+    Swal.fire("¡Gracias!", "Tu compra ha sido realizada con éxito", "success");
+    localStorage.removeItem("carrito");
+    setProductos([]);
+    setTotal(0);
+    setTotalItems(0);
+  };
+
+  useEffect(() => {
+    obtenerProductos();
+  }, []);
+
+  useEffect(() => {
+    calcularTotales();
+  }, [productos]);
 
   return (
-    <div className="carrito-container">
-      <h2 className="carrito-titulo">Tu Carrito</h2>
-      {productos.map((producto) => (
-        <div key={producto.id} className="carrito-item">
-          <img
-            src={producto.image}
-            alt={producto.title}
-            className="carrito-img"
-          />
-          <div className="carrito-detalles">
-            <h3 className="carrito-nombre">{producto.title}</h3>
-            <p className="carrito-precio">Precio: ${producto.price}</p>
-            <input
-              type="number"
-              min="1"
-              value={cantidades[producto.id]}
-              onChange={(e) =>
-                handleCantidadChange(producto.id, e.target.value)
-              }
-              className="carrito-cantidad"
-            />
-            <p className="carrito-total">
-              Total: ${producto.price * (cantidades[producto.id] || 1)}
-            </p>
-            <button
-              className="btn-eliminar"
-              onClick={() => eliminarProducto(producto.id)}
-            >
-              Eliminar
-            </button>
-          </div>
+    <Container className="my-5 carrito-container">
+      {productos.length === 0 ? (
+        <div className="carrito-vacio">
+          <h2>Tu carrito está vacío 🛒</h2>
+          <p>Agregá productos para comenzar tu compra</p>
         </div>
-      ))}
-      <div className="carrito-footer">
-        <p className="carrito-total-final">
-          Total Final: ${totalFinal.toFixed(2)}
-        </p>
-        <button className="btn-comprar" onClick={handleComprar}>
-          Comprar
-        </button>
-      </div>
-    </div>
+      ) : (
+        <>
+          <h2 className="mb-4 text-center">Carrito de Compras</h2>
+          <Table bordered hover responsive className="text-center">
+            <thead>
+              <tr>
+                <th>Imagen</th>
+                <th>Producto</th>
+                <th>Precio</th>
+                <th>Cantidad</th>
+                <th>Total</th>
+                <th>Eliminar</th>
+              </tr>
+            </thead>
+            <tbody>
+              {productos.map((prod) => (
+                <tr key={prod.id}>
+                  <td>
+                    <img
+                      src={prod.imagen}
+                      alt={prod.titulo}
+                      style={{ width: "100px", borderRadius: "10px" }}
+                    />
+                  </td>
+                  <td>{prod.titulo}</td>
+                  <td>${prod.precio}</td>
+                  <td>
+                    <Form.Control
+                      type="number"
+                      min={1}
+                      value={prod.cantidad}
+                      onChange={(e) => cambiarCantidad(prod.id, e.target.value)}
+                      style={{ width: "80px", margin: "auto" }}
+                    />
+                  </td>
+                  <td>${(prod.precio * prod.cantidad).toFixed(2)}</td>
+                  <td>
+                    <Button
+                      className="btn-eliminar" variant="danger"
+                      onClick={() => eliminarProducto(prod.id)}
+                    >
+                      Eliminar
+                    </Button>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </Table>
+
+          <div className="resumen-carrito mt-4">
+            <h4>Total de productos: {totalItems}</h4>
+            <h4>Total a pagar: ${total.toFixed(2)}</h4>
+            <div className="botones-resumen">
+              <Button
+                className="btn-eliminar"
+                variant="warning"
+                onClick={vaciarCarrito}
+              >
+                Vaciar carrito
+              </Button>
+              <Button
+                className="btn-confirmar"
+                variant="success"
+                onClick={confirmarCompra}
+              >
+                Confirmar compra
+              </Button>
+            </div>
+          </div>
+        </>
+      )}
+    </Container>
   );
 };
 
