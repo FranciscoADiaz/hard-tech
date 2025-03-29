@@ -14,16 +14,20 @@ import "./index.css";
 
 function App() {
   return (
-    <Router basename="/hard-tech">
+    <Router basename="/hard-tech/">
       <NavbarC />
       <Routes>
         <Route path="/" element={<PaginaPrincipal />} />
-        <Route path="/Carrito" element={<Carrito />} />
+        <Route path="/user" element={<PaginaPrincipal />} />
+        <Route path="/admin" element={<PaginaPrincipal />} />
+        <Route path="/user/Carrito" element={<Carrito />} />
         <Route path="/Contacto" element={<Contacto />} />
         <Route path="/SobreNosotros" element={<SobreNosotros />} />
         <Route path="/Registrarse" element={<Registrarse />} />
         <Route path="/IniciarSesion" element={<IniciarSesion />} />
         <Route path="/producto/:id" element={<DetalleProducto />} />
+        <Route path="/user/producto/:id" element={<DetalleProducto />} />
+        <Route path="/admin/producto/:id" element={<DetalleProducto />} />
         <Route path="*" element={<Pagina404 />} />
       </Routes>
       <Footer />
