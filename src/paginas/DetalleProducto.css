@@ -1,5 +1,6 @@
-body {
+.detalle-producto-page{
   background-color: #B0B0B0;
+  padding: 50px 0;
 }
 
 .product-detail-title {
@@ -11,7 +12,7 @@ body {
 }
 
 .product-description {
-  color: #333;
+  color: #1A1A2E;
   font-size: 1.3rem;
   line-height: 1.6;
   margin-bottom: 20px;
@@ -22,7 +23,7 @@ body {
 .product-detail-category,
 .product-detail-id {
   font-family: 'Montserrat', sans-serif;
-  color: #333;
+  color: #1A1A2E;
   font-weight: 500;
   font-size: 1.3rem;
   margin-bottom: 15px;

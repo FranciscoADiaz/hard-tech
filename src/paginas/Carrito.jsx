@@ -87,84 +87,89 @@ const Carrito = () => {
   }, [productos]);
 
   return (
-    <Container className="my-5 carrito-container">
-      {productos.length === 0 ? (
-        <div className="carrito-vacio">
-          <h2>Tu carrito está vacío 🛒</h2>
-          <p>Agregá productos para comenzar tu compra</p>
-        </div>
-      ) : (
-        <>
-          <h2 className="mb-4 text-center">Carrito de Compras</h2>
-          <Table bordered hover responsive className="text-center">
-            <thead>
-              <tr>
-                <th>Imagen</th>
-                <th>Producto</th>
-                <th>Precio</th>
-                <th>Cantidad</th>
-                <th>Total</th>
-                <th>Eliminar</th>
-              </tr>
-            </thead>
-            <tbody>
-              {productos.map((prod) => (
-                <tr key={prod.id}>
-                  <td>
-                    <img
-                      src={prod.imagen}
-                      alt={prod.titulo}
-                      style={{ width: "100px", borderRadius: "10px" }}
-                    />
-                  </td>
-                  <td>{prod.titulo}</td>
-                  <td>${prod.precio}</td>
-                  <td>
-                    <Form.Control
-                      type="number"
-                      min={1}
-                      value={prod.cantidad}
-                      onChange={(e) => cambiarCantidad(prod.id, e.target.value)}
-                      style={{ width: "80px", margin: "auto" }}
-                    />
-                  </td>
-                  <td>${(prod.precio * prod.cantidad).toFixed(2)}</td>
-                  <td>
-                    <Button
-                      className="btn-eliminar" variant="danger"
-                      onClick={() => eliminarProducto(prod.id)}
-                    >
-                      Eliminar
-                    </Button>
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </Table>
-
-          <div className="resumen-carrito mt-4">
-            <h4>Total de productos: {totalItems}</h4>
-            <h4>Total a pagar: ${total.toFixed(2)}</h4>
-            <div className="botones-resumen">
-              <Button
-                className="btn-eliminar"
-                variant="warning"
-                onClick={vaciarCarrito}
-              >
-                Vaciar carrito
-              </Button>
-              <Button
-                className="btn-confirmar"
-                variant="success"
-                onClick={confirmarCompra}
-              >
-                Confirmar compra
-              </Button>
-            </div>
+    <div className="carrito-page">
+      <Container className="my-5 carrito-container">
+        {productos.length === 0 ? (
+          <div className="carrito-vacio">
+            <h2>Tu carrito está vacío 🛒</h2>
+            <p>Agregá productos para comenzar tu compra</p>
           </div>
-        </>
-      )}
-    </Container>
+        ) : (
+          <>
+            <h2 className="mb-4 text-center text-config">Carrito de Compras</h2>
+            <Table bordered hover responsive className="text-center">
+              <thead>
+                <tr>
+                  <th>Imagen</th>
+                  <th>Producto</th>
+                  <th>Precio</th>
+                  <th>Cantidad</th>
+                  <th>Total</th>
+                  <th>Eliminar</th>
+                </tr>
+              </thead>
+              <tbody>
+                {productos.map((prod) => (
+                  <tr key={prod.id}>
+                    <td>
+                      <img
+                        src={prod.imagen}
+                        alt={prod.titulo}
+                        style={{ width: "100px", borderRadius: "10px" }}
+                      />
+                    </td>
+                    <td>{prod.titulo}</td>
+                    <td>${prod.precio}</td>
+                    <td>
+                      <Form.Control
+                        type="number"
+                        min={1}
+                        value={prod.cantidad}
+                        onChange={(e) =>
+                          cambiarCantidad(prod.id, e.target.value)
+                        }
+                        style={{ width: "80px", margin: "auto" }}
+                      />
+                    </td>
+                    <td>${(prod.precio * prod.cantidad).toFixed(2)}</td>
+                    <td>
+                      <Button
+                        className="btn-eliminar"
+                        variant="danger"
+                        onClick={() => eliminarProducto(prod.id)}
+                      >
+                        Eliminar
+                      </Button>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </Table>
+
+            <div className="resumen-carrito mt-4">
+              <h4>Total de productos: {totalItems}</h4>
+              <h4>Total a pagar: ${total.toFixed(2)}</h4>
+              <div className="botones-resumen">
+                <Button
+                  className="btn-eliminar"
+                  variant="warning"
+                  onClick={vaciarCarrito}
+                >
+                  Vaciar carrito
+                </Button>
+                <Button
+                  className="btn-confirmar"
+                  variant="success"
+                  onClick={confirmarCompra}
+                >
+                  Confirmar compra
+                </Button>
+              </div>
+            </div>
+          </>
+        )}
+      </Container>
+    </div>
   );
 };
 
