@@ -52,12 +52,12 @@ const AdminProductos = () => {
       <Container className="py-5">
         <div className="d-flex justify-content-between align-items-center mb-4">
           <h2 className="titulo-admin">Administrar Productos</h2>
-          <Button
+          <button
             className="btn-agregar"
             onClick={() => navigate("/admin/productos/formulario")}
           >
             Agregar Producto
-          </Button>
+          </button>
         </div>
 
         <TablaAdmin
