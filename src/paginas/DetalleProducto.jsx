@@ -103,30 +103,35 @@ const DetalleProducto = () => {
   }
 
   return (
-    <Container className="my-5">
-      <Row>
-        <Col md={6} className="text-center">
-          <img
-            src={producto.imagen}
-            alt={producto.titulo}
-            className="product-detail-image"
-          />
-        </Col>
-        <Col md={6}>
-          <h2 className="product-detail-title">{producto.titulo}</h2>
-          <p className="product-detail-price">Precio: ${producto.precio}</p>
-          <p className="product-description">{producto.descripcion}</p>
-          <p className="product-detail-category">
-            Categoría: {producto.category}
-          </p>
-          <p className="product-detail-id">ID: {producto.id}</p>
+    <div className="detalle-producto-page">
+      <Container className="my-5">
+        <Row>
+          <Col md={6} className="text-center">
+            <img
+              src={producto.imagen}
+              alt={producto.titulo}
+              className="product-detail-image"
+            />
+          </Col>
+          <Col md={6}>
+            <h2 className="product-detail-title">{producto.titulo}</h2>
+            <p className="product-detail-price">Precio: ${producto.precio}</p>
+            <p className="product-description">{producto.descripcion}</p>
+            <p className="product-detail-category">
+              Categoría: {producto.category}
+            </p>
+            <p className="product-detail-id">ID: {producto.id}</p>
 
-          <button className="btn-agregar me-3" onClick={agregarAlCarrito}>
-            Agregar al carrito
-          </button>
-        </Col>
-      </Row>
-    </Container>
+            <button
+              className="btn-agregar text-center"
+              onClick={agregarAlCarrito}
+            >
+              Agregar al carrito
+            </button>
+          </Col>
+        </Row>
+      </Container>
+    </div>
   );
 };
 

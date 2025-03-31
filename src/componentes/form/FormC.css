@@ -1,14 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&family=Orbitron:wght@500;700&display=swap');
 
-* body {
+.form-container{
   background-color: #B0B0B0;
   font-family: 'Montserrat', sans-serif;
+  padding: 50px;
+  padding: 2rem; 
 }
 
 .form-wrapper .form-personalizado {
   background-color: #B0B0B0;
 }
-
 
 .form-wrapper {
   min-height: 100vh;
@@ -19,12 +20,11 @@
   padding: 40px 20px;
 }
 
-
 .form-personalizado {
   background-color: #fff;
   padding: 40px;
   border-radius: 20px;
-  box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.473);
   animation: fadeIn 0.6s ease-in-out;
 }
 
@@ -36,30 +36,27 @@
   margin-bottom: 20px;
 }
 
-
 .form-personalizado .form-control {
   border-radius: 20px;
   font-size: 1rem;
   padding: 12px;
   font-family: 'Montserrat', sans-serif;
-  border: 1px solid #ccc;
+  border: 1px solid #1A1A2E;
 }
 
 .form-personalizado .form-label {
   font-family: 'Montserrat', sans-serif;
   font-weight: 500;
-  color: #333;
+  color: #8A2BE2;
 }
 
-
 .form-check-input {
-  cursor: pointer;
+  cursor: pointer;  
 }
 .form-check-label {
   font-size: 0.95rem;
   font-family: 'Montserrat', sans-serif;
 }
-
 
 .btn-agregar {
   background-color: #8A2BE2;
