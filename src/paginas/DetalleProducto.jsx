@@ -118,7 +118,7 @@ const DetalleProducto = () => {
             <p className="product-detail-price">Precio: ${producto.precio}</p>
             <p className="product-description">{producto.descripcion}</p>
             <p className="product-detail-category">
-              Categoría: {producto.category}
+              Categoría: {producto.categoria || "Sin categoría"}
             </p>
             <p className="product-detail-id">ID: {producto.id}</p>
 

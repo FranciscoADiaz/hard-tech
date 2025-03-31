@@ -97,7 +97,12 @@ const Carrito = () => {
         ) : (
           <>
             <h2 className="mb-4 text-center text-config">Carrito de Compras</h2>
-            <Table bordered hover responsive className="text-center">
+            <Table
+              bordered
+              hover
+              responsive
+              className="text-center tabla-con-radius"
+            >
               <thead>
                 <tr>
                   <th>Imagen</th>
