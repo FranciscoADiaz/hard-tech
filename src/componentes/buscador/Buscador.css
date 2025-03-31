@@ -4,7 +4,7 @@
   align-items: center;
   background-color: #B0B0B0;
   margin: 0;
-  padding-top: 100px;
+  padding-top: 50px;  
 }
 
 .search-bar{
@@ -28,13 +28,18 @@
   font-weight: 500;
   font-style: normal;
   font-variation-settings:
-    "wdth" 100;
+    "width" 100;
 }
 
 .category-filter {
   padding: 10px;
-  border: 1px solid #ccc;
+  border: 1px solid #8A2BE2;
   border-radius: 5px;
   background: white;
   margin-left: 10px;
+  color: #8A2BE2;
+}
+
+.category-filter:focus{
+  border-color: #8A2BE2;
 }

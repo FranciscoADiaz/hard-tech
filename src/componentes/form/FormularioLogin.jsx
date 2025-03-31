@@ -53,40 +53,42 @@ const FormularioLogin = () => {
   };
 
   return (
-    <Container className="d-flex justify-content-center my-5">
-      <Row className="w-100 justify-content-center">
-        <Col xs={12} md={8} lg={6}>
-          <Form className="form-personalizado" onSubmit={iniciarSesion}>
-            <h2 className="form-titulo">Iniciar Sesión</h2>
-            <Form.Group className="mb-3">
-              <Form.Label>Nombre de Usuario</Form.Label>
-              <Form.Control
-                type="text"
-                placeholder="Usuario"
-                name="usuario"
-                value={login.usuario}
-                onChange={handleChange}
-              />
-            </Form.Group>
+    <div className="form-container">      
+      <Container className="d-flex justify-content-center my-5">
+        <Row className="w-100 justify-content-center">
+          <Col xs={12} md={8} lg={6}>          
+            <Form className="form-personalizado" onSubmit={iniciarSesion}>
+              <h2 className="form-titulo">Iniciar Sesión</h2>
+              <Form.Group className="mb-3">
+                <Form.Label>Nombre de Usuario</Form.Label>
+                <Form.Control
+                  type="text"
+                  placeholder="Usuario"
+                  name="usuario"
+                  value={login.usuario}
+                  onChange={handleChange}
+                />
+              </Form.Group>
 
-            <Form.Group className="mb-3">
-              <Form.Label>Contraseña</Form.Label>
-              <Form.Control
-                type="password"
-                placeholder="********"
-                name="contrasenia"
-                value={login.contrasenia}
-                onChange={handleChange}
-              />
-            </Form.Group>
+              <Form.Group className="mb-3">
+                <Form.Label>Contraseña</Form.Label>
+                <Form.Control
+                  type="password"
+                  placeholder="********"
+                  name="contrasenia"
+                  value={login.contrasenia}
+                  onChange={handleChange}
+                />
+              </Form.Group>
 
-            <button type="submit" className="btn-agregar w-100">
-              Iniciar Sesión
-            </button>
-          </Form>
-        </Col>
-      </Row>
-    </Container>
+              <button type="submit" className="btn-agregar w-100">
+                Iniciar Sesión
+              </button>
+            </Form>
+          </Col>
+        </Row>
+      </Container>
+    </div>
   );
 };
 

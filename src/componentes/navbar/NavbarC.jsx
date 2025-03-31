@@ -54,10 +54,7 @@ const NavbarC = () => {
                 </NavLink>
                 <NavLink to="/SobreNosotros" className="nav-item">
                   Sobre Nosotros
-                </NavLink>
-                <NavLink to="/Contacto" className="nav-item">
-                  Contacto
-                </NavLink>
+                </NavLink>               
                 <div className="auth-links">
                   <NavLink to="/IniciarSesion" className="nav-item">
                     Iniciar Sesión

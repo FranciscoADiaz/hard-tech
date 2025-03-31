@@ -1,13 +1,15 @@
-body {
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Orbitron:wght@400..900&display=swap');
+
+.carrito-page{
   background-color: #B0B0B0;
+  padding: 1px;
 }
 
 .carrito-container {
-  min-height: 80vh;
+  min-height: 80vh;  
 }
 
-.carrito-vacio {
-  min-height: 60vh;
+.carrito-vacio {  
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -15,6 +17,7 @@ body {
   font-family: 'Orbitron', sans-serif;
   text-align: center;
   color: #8A2BE2;
+  min-height: 60vh;
 }
 
 .carrito-vacio h2 {
@@ -25,7 +28,7 @@ body {
 .carrito-vacio p {
   font-family: 'Montserrat', sans-serif;
   font-size: 1.2rem;
-  color: #333;
+  color: #1A1A2E;
 }
 
 /* Tabla y botones */
@@ -46,7 +49,7 @@ thead {
 table td, table th {
   vertical-align: middle;
   font-family: 'Montserrat', sans-serif;
-  font-size: 1.1rem;
+  font-size: 1.1rem;  
 }
 
 .btn-eliminar,
@@ -112,6 +115,14 @@ tbody tr:hover {
   transition: background-color 0.3s ease;
 }
 
+.text-config{
+  color: #8A2BE2;
+  font-family: "Orbitron", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+}
+
 table img {
   width: 100px;
   height: auto;
@@ -135,7 +146,7 @@ table {
 }
 
 .resumen-carrito h4 {
-  color: #333;
+  color: #1A1A2E;
   font-size: 1.3rem;
   margin-bottom: 10px;
 }

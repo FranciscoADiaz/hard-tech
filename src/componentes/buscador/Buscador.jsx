@@ -19,7 +19,7 @@ const Buscador = ({ onSearch, onCategoryChange }) => {
     <section className="search buscador">
       <input
         type="search"
-        placeholder="Buscar"
+        placeholder=" 🔍 Buscar"
         className="search-bar"
         value={search}
         onChange={handleSearchChange}

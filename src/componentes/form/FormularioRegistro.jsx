@@ -87,75 +87,77 @@ const FormularioRegistro = () => {
   };
 
   return (
-    <Container className="d-flex justify-content-center my-5">
-      <Row className="w-100 justify-content-center">
-        <Col xs={12} md={8} lg={6}>
-          <Form className="form-personalizado" onSubmit={validarRegistro}>
-            <h2 className="form-titulo">Crear Cuenta</h2>
-            <Form.Group className="mb-3">
-              <Form.Label>Nombre de Usuario</Form.Label>
-              <Form.Control
-                type="text"
-                placeholder="Usuario"
-                name="usuario"
-                value={registro.usuario}
-                onChange={handleChange}
-              />
-            </Form.Group>
+    <div className="form-container">
+      <Container className="d-flex justify-content-center">
+        <Row className="w-100 justify-content-center">
+          <Col xs={12} md={8} lg={6}>
+            <Form className="form-personalizado" onSubmit={validarRegistro}>
+              <h2 className="form-titulo">Crear Cuenta</h2>
+              <Form.Group className="mb-3">
+                <Form.Label>Nombre de Usuario</Form.Label>
+                <Form.Control
+                  type="text"
+                  placeholder="Usuario"
+                  name="usuario"
+                  value={registro.usuario}
+                  onChange={handleChange}
+                />
+              </Form.Group>
 
-            <Form.Group className="mb-3">
-              <Form.Label>Email</Form.Label>
-              <Form.Control
-                type="email"
-                placeholder="correo@ejemplo.com"
-                name="email"
-                value={registro.email}
-                onChange={handleChange}
-              />
-            </Form.Group>
+              <Form.Group className="mb-3">
+                <Form.Label>Email</Form.Label>
+                <Form.Control
+                  type="email"
+                  placeholder="correo@ejemplo.com"
+                  name="email"
+                  value={registro.email}
+                  onChange={handleChange}
+                />
+              </Form.Group>
 
-            <Form.Group className="mb-3">
-              <Form.Label>Contraseña</Form.Label>
-              <Form.Control
-                type="password"
-                placeholder="********"
-                name="contrasenia"
-                value={registro.contrasenia}
-                onChange={handleChange}
-              />
-              <Form.Text className="text-muted">
-                Mínimo 8 caracteres, una mayúscula y un número
-              </Form.Text>
-            </Form.Group>
+              <Form.Group className="mb-3">
+                <Form.Label>Contraseña</Form.Label>
+                <Form.Control
+                  type="password"
+                  placeholder="********"
+                  name="contrasenia"
+                  value={registro.contrasenia}
+                  onChange={handleChange}
+                />
+                <Form.Text className="text-muted">
+                  Mínimo 8 caracteres, una mayúscula y un número
+                </Form.Text>
+              </Form.Group>
 
-            <Form.Group className="mb-3">
-              <Form.Label>Repetir Contraseña</Form.Label>
-              <Form.Control
-                type="password"
-                placeholder="********"
-                name="repContrasenia"
-                value={registro.repContrasenia}
-                onChange={handleChange}
-              />
-            </Form.Group>
+              <Form.Group className="mb-3">
+                <Form.Label>Repetir Contraseña</Form.Label>
+                <Form.Control
+                  type="password"
+                  placeholder="********"
+                  name="repContrasenia"
+                  value={registro.repContrasenia}
+                  onChange={handleChange}
+                />
+              </Form.Group>
 
-            <Form.Group className="mb-3">
-              <Form.Check
-                type="checkbox"
-                name="check"
-                label="Acepto los términos y condiciones"
-                checked={registro.check}
-                onChange={handleChange}
-              />
-            </Form.Group>
+              <Form.Group className="mb-3">
+                <Form.Check
+                  type="checkbox"
+                  name="check"
+                  label="Acepto los términos y condiciones"
+                  checked={registro.check}
+                  onChange={handleChange}
+                />
+              </Form.Group>
 
-            <button type="submit" className="btn-agregar w-100">
-              Registrarse
-            </button>
-          </Form>
-        </Col>
-      </Row>
-    </Container>
+              <button type="submit" className="btn-agregar w-100">
+                Registrarse
+              </button>
+            </Form>
+          </Col>
+        </Row>
+      </Container>
+    </div>
   );
 };
 
