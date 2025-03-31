@@ -1,7 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import PaginaPrincipal from "./paginas/PaginaPrincipal";
 import DetalleProducto from "./paginas/DetalleProducto";
-import Contacto from "./paginas/Contacto";
 import NavbarC from "./componentes/navbar/NavbarC";
 import SobreNosotros from "./paginas/SobreNosotros";
 import Carrito from "./paginas/Carrito";
@@ -11,6 +10,7 @@ import IniciarSesion from "./paginas/IniciarSesion";
 import Pagina404 from "./paginas/Pagina404";
 import AdminProductos from "./paginas/AdminProductos"
 import FormAdmin from "./paginas/FormAdmin"; 
+import Favoritos from "./paginas/Favoritos";
 import "./App.css";
 import "./index.css";
 
@@ -21,9 +21,9 @@ function App() {
       <Routes>
         <Route path="/" element={<PaginaPrincipal />} />
         <Route path="/user" element={<PaginaPrincipal />} />
+        <Route path="/user/Favoritos" element={<Favoritos />} />
         <Route path="/admin" element={<PaginaPrincipal />} />
         <Route path="/user/Carrito" element={<Carrito />} />
-        <Route path="/Contacto" element={<Contacto />} />
         <Route path="/SobreNosotros" element={<SobreNosotros />} />
         <Route path="/Registrarse" element={<Registrarse />} />
         <Route path="/IniciarSesion" element={<IniciarSesion />} />
