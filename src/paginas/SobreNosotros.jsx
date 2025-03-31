@@ -3,18 +3,13 @@ import "./SobreNosotros.css";
 
 const SobreNosotros = () => {
   const integrantesCol1 = [
-    { nombre: "Nicolas", img: "https://i.ibb.co/Kj036HY9/Nico.jpg" },
-    { nombre: "Matias", img: "https://i.ibb.co/nq2d1Mjb/Matias.jpg" },
-    { nombre: "Francisco", img: "https://i.ibb.co/jZQgpmGq/francisco.png" },
+    { nombre: "Nicolas", img: "https://i.ibb.co/Kj036HY9/Nico.jpg"},
+    { nombre: "Tobias", img: "https://i.ibb.co/Z6jZk95D/tobias.png"},
   ];
 
   const integrantesCol2 = [
     { nombre: "Ana Paula", img: "https://i.ibb.co/67CgD1NC/Ana.jpg" },
-    { nombre: "Tobias", img: "https://i.ibb.co/ZpJnGwKY/Thomas.jpg" },
-    {
-      nombre: "HardTech",
-      img: "https://i.ibb.co/Tq2wp2W6/hard.jpg",
-    },
+    { nombre: "Francisco", img: "https://i.ibb.co/fYbbMHv2/Franciscoo.png" },
   ];
 
   return (

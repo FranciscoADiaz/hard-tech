@@ -87,7 +87,7 @@ const FormularioRegistro = () => {
   };
 
   return (
-    <div className="form-container">
+    <div className="formulario-page">
       <Container className="d-flex justify-content-center">
         <Row className="w-100 justify-content-center">
           <Col xs={12} md={8} lg={6}>
