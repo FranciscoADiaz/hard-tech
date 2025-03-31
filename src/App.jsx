@@ -13,6 +13,7 @@ import FormAdmin from "./paginas/FormAdmin";
 import Favoritos from "./paginas/Favoritos";
 import "./App.css";
 import "./index.css";
+import PrivateRouteC from "./componentes/privateroute/PrivateRouteC";
 
 function App() {
   return (
@@ -23,17 +24,34 @@ function App() {
         <Route path="/user" element={<PaginaPrincipal />} />
         <Route path="/user/Favoritos" element={<Favoritos />} />
         <Route path="/admin" element={<PaginaPrincipal />} />
+
         <Route path="/user/Carrito" element={<Carrito />} />
+
         <Route path="/SobreNosotros" element={<SobreNosotros />} />
+
         <Route path="/Registrarse" element={<Registrarse />} />
         <Route path="/IniciarSesion" element={<IniciarSesion />} />
         <Route path="/producto/:id" element={<DetalleProducto />} />
         <Route path="/user/producto/:id" element={<DetalleProducto />} />
         <Route path="/admin/producto/:id" element={<DetalleProducto />} />
-        <Route path="/admin/productos" element={<AdminProductos />} />
+        <Route
+          path="/admin/productos"
+          element={
+            <PrivateRouteC rol="admin">
+              <AdminProductos />
+            </PrivateRouteC>
+          }
+        />
         <Route path="/admin/productos/formulario" element={<FormAdmin />} />
         <Route path="/admin/productos/formulario/:id" element={<FormAdmin />} />
-        <Route path="/admin/editar/:id" element={<FormAdmin />} />
+        <Route
+          path="/admin/editar/:id"
+          element={
+            <PrivateRouteC rol="admin">
+              <FormAdmin />
+            </PrivateRouteC>
+          }
+        />
         <Route path="*" element={<Pagina404 />} />
       </Routes>
       <Footer />
