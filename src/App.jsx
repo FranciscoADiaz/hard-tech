@@ -20,6 +20,7 @@ function App() {
     <Router basename="/hard-tech/">
       <NavbarC />
       <Routes>
+        <Route path="/" element={<PaginaPrincipal />} />
         <Route path="/user" element={<PaginaPrincipal />} />
         <Route path="/admin" element={<PaginaPrincipal />} />
         <Route
