@@ -10,7 +10,7 @@ const SobreNosotros = () => {
 
   const integrantesCol2 = [
     { nombre: "Ana Paula", img: "https://i.ibb.co/67CgD1NC/Ana.jpg" },
-    { nombre: "Thomas", img: "https://i.ibb.co/ZpJnGwKY/Thomas.jpg" },
+    { nombre: "Tobias", img: "https://i.ibb.co/ZpJnGwKY/Thomas.jpg" },
     {
       nombre: "HardTech",
       img: "https://i.ibb.co/Tq2wp2W6/hard.jpg",
@@ -18,40 +18,42 @@ const SobreNosotros = () => {
   ];
 
   return (
-    <Container className="sobre-nosotros my-5">
-      {/* Texto en línea recta */}
-      <Row>
-        <Col>
-          <h2>Sobre Nosotros</h2>
-          <p className="texto-nosotros">
-            Somos un equipo apasionado por la tecnología, el gaming y el
-            hardware. Trabajamos día a día para ofrecerte la mejor experiencia y
-            los mejores productos del mercado.
-          </p>
-        </Col>
-      </Row>
+    <div className="sobre-nosotros-page">
+      <Container className="sobre-nosotros my-5">
+        {/* Texto en línea recta */}
+        <Row>
+          <Col>
+            <h2>Sobre Nosotros</h2>
+            <p className="texto-nosotros">
+              Somos un equipo apasionado por la tecnología, el gaming y el
+              hardware. Trabajamos día a día para ofrecerte la mejor experiencia
+              y los mejores productos del mercado.
+            </p>
+          </Col>
+        </Row>
 
-      {/* Avatares en dos columnas */}
-      <Row className="mt-5">
-        <Col md={6} className="integrantes-columna">
-          {integrantesCol1.map((integrante, index) => (
-            <div key={index} className="integrante">
-              <Image src={integrante.img} roundedCircle className="avatar" />
-              <p>{integrante.nombre}</p>
-            </div>
-          ))}
-        </Col>
+        {/* Avatares en dos columnas */}
+        <Row className="mt-5">
+          <Col md={6} className="integrantes-columna">
+            {integrantesCol1.map((integrante, index) => (
+              <div key={index} className="integrante">
+                <Image src={integrante.img} roundedCircle className="avatar" />
+                <p>{integrante.nombre}</p>
+              </div>
+            ))}
+          </Col>
 
-        <Col md={6} className="integrantes-columna">
-          {integrantesCol2.map((integrante, index) => (
-            <div key={index} className="integrante">
-              <Image src={integrante.img} roundedCircle className="avatar" />
-              <p>{integrante.nombre}</p>
-            </div>
-          ))}
-        </Col>
-      </Row>
-    </Container>
+          <Col md={6} className="integrantes-columna">
+            {integrantesCol2.map((integrante, index) => (
+              <div key={index} className="integrante">
+                <Image src={integrante.img} roundedCircle className="avatar" />
+                <p>{integrante.nombre}</p>
+              </div>
+            ))}
+          </Col>
+        </Row>
+      </Container>
+    </div>
   );
 };
 
