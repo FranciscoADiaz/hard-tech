@@ -53,10 +53,10 @@ const FormularioLogin = () => {
   };
 
   return (
-    <div className="form-container">      
+    <div fluid className="formulario-page">
       <Container className="d-flex justify-content-center my-5">
         <Row className="w-100 justify-content-center">
-          <Col xs={12} md={8} lg={6}>          
+          <Col xs={12} md={8} lg={6}>
             <Form className="form-personalizado" onSubmit={iniciarSesion}>
               <h2 className="form-titulo">Iniciar Sesión</h2>
               <Form.Group className="mb-3">

@@ -5,7 +5,7 @@ const PrivateRouteC = ({children, rol}) => {
 
   const navigate = useNavigate();
   const usuarioLog = JSON.parse(sessionStorage.getItem("usuarioLogeado")) || null
-  const rutasAdminProtegidas = ["/admin", "/admin/products", "/admin/users"]
+  const rutasAdminProtegidas = ["/admin", "/admin/producto", "/admin/users"]
 
   if (!usuarioLog) {
     setTimeout(() => {
