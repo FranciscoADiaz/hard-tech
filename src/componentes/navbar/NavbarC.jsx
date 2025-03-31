@@ -88,7 +88,7 @@ const NavbarC = () => {
                 <NavLink to="/admin" className="nav-item">
                   Inicio
                 </NavLink>
-                <NavLink to="/admin/products" className="nav-item">
+                <NavLink to="/admin/productos" className="nav-item">
                   Administrar Productos
                 </NavLink>
                 <NavLink to="/admin/users" className="nav-item">
