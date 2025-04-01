@@ -12,11 +12,10 @@ const NavbarC = () => {
     sessionStorage.removeItem("usuarioLogeado");
     navigate("/");
     setTimeout(() => {
-      window.location.reload(); // Refresca el navbar
+      window.location.reload(); 
     }, 100);
   };
 
-  // Determinar a dónde redirigir cuando se hace clic en el logo
   const handleLogoClick = () => {
     if (usuarioLogeado?.rol === "administrador") {
       navigate("/admin");
@@ -54,7 +53,7 @@ const NavbarC = () => {
                 </NavLink>
                 <NavLink to="/SobreNosotros" className="nav-item">
                   Sobre Nosotros
-                </NavLink>               
+                </NavLink>
                 <div className="auth-links">
                   <NavLink to="/IniciarSesion" className="nav-item">
                     Iniciar Sesión

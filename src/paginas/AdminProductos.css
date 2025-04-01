@@ -1,7 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap');
+
 .admin-productos-page {
   background-color: #B0B0B0;
   min-height: 100vh;
-  padding-top: 60px;
+  padding-top: 20px;
 }
 
 .titulo-admin {
@@ -9,6 +11,8 @@
   color: #8A2BE2;
   font-weight: bold;
   font-size: 2rem;
+  text-align: center;
+  margin-bottom: 30px;
 }
 
 .btn-agregar {
@@ -16,14 +20,19 @@
   color: #fff;
   border: 2px solid #8A2BE2;
   border-radius: 8px;
-  font-family: "Orbitron", sans-serif;
-  padding: 10px 20px;
+  padding: 15px 25px;
+  font-size: 1.2rem;
   font-weight: bold;
   transition: all 0.3s ease;
+  font-family: 'Orbitron', sans-serif;
 }
 
 .btn-agregar:hover {
   background-color: #fff;
   color: #8A2BE2;
   transform: scale(1.05);
+}
+
+.btn-agregar:active {
+  transform: scale(0.95);
 }

@@ -20,7 +20,7 @@ const TablaProductos = ({ data, onEditar, onEliminar, actualizarLista }) => {
         showConfirmButton: false,
         timer: 1500,
       });
-      actualizarLista(); // Vuelve a cargar la lista
+      actualizarLista(); 
     }
   };
 

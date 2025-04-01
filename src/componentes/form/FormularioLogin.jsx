@@ -67,6 +67,9 @@ const FormularioLogin = () => {
                   name="usuario"
                   value={login.usuario}
                   onChange={handleChange}
+                  required
+                  minLength={5}
+                  maxLength={30}
                 />
               </Form.Group>
 
@@ -78,6 +81,9 @@ const FormularioLogin = () => {
                   name="contrasenia"
                   value={login.contrasenia}
                   onChange={handleChange}
+                  required
+                  minLength={8}
+                  maxLength={30}
                 />
               </Form.Group>
 

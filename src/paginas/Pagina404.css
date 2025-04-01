@@ -70,7 +70,6 @@ body {
   object-fit: contain;
 }
 
-/* ✅ Media Query para tablets y móviles */
 @media (max-width: 768px) {
   .not-found-container {
     flex-direction: column;
