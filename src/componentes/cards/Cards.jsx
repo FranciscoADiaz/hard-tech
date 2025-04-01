@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
+import Swal from "sweetalert2";
 import "./Cards.css";
 
 const Cards = ({ producto }) => {
@@ -12,9 +13,29 @@ const Cards = ({ producto }) => {
   }, [producto.id]);
 
   const toggleFavorito = () => {
-    const favs = JSON.parse(localStorage.getItem("favoritos")) || [];
+    const usuario = JSON.parse(sessionStorage.getItem("usuarioLogeado"));
 
+    if (!usuario) {
+      Swal.fire(
+        "Atención",
+        "Debes iniciar sesión para agregar a favoritos.",
+        "info"
+      );
+      return;
+    }
+
+    if (usuario.rol === "administrador") {
+      Swal.fire(
+        "No disponible",
+        "Esta función no está disponible para administradores.",
+        "warning"
+      );
+      return;
+    }
+
+    const favs = JSON.parse(localStorage.getItem("favoritos")) || [];
     let nuevosFavs;
+
     if (favorito) {
       nuevosFavs = favs.filter((p) => p.id !== producto.id);
     } else {
