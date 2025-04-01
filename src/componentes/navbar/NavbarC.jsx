@@ -90,7 +90,7 @@ const NavbarC = () => {
                 <NavLink to="/admin/productos" className="nav-item">
                   Administrar Productos
                 </NavLink>
-                <NavLink to="/admin/users" className="nav-item">
+                <NavLink to="/admin/usuarios" className="nav-item">
                   Administrar Usuarios
                 </NavLink>
                 <span className="nav-item cerrar-sesion" onClick={cerrarSesion}>
