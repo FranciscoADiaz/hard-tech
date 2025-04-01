@@ -75,7 +75,6 @@ export default function Footer() {
         </div>
       </Container>
 
-      {/* Copy Pegado al fondo */}
       <div className="footer-bottom text-center">
         © 2025 HardTech. Todos los derechos reservados.
       </div>

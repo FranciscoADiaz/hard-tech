@@ -31,7 +31,6 @@ const FormC = ({ idPage }) => {
     const { usuario, email, contrasenia, repContrasenia, check } = registro;
     let nuevoError = {};
 
-    // Validar usuario
     if (!usuario.trim()) {
       Swal.fire({
         icon: "error",
@@ -41,7 +40,6 @@ const FormC = ({ idPage }) => {
       return;
     }
 
-    // Validación de usuario y email
     const usuariosLs = JSON.parse(localStorage.getItem("usuarios")) || [];
 
     const usuarioExistente = usuariosLs.find(
@@ -57,7 +55,6 @@ const FormC = ({ idPage }) => {
       return;
     }
 
-    // Validar formato del email
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!email.trim()) {
       Swal.fire({
@@ -75,7 +72,6 @@ const FormC = ({ idPage }) => {
       return;
     }
 
-    // Validar contraseña
     const passwordRegex = /^(?=.*[A-Z])(?=.*\d).{8,}$/;
     if (!contrasenia.trim()) {
       Swal.fire({
@@ -93,7 +89,6 @@ const FormC = ({ idPage }) => {
       return;
     }
 
-    // Validar aceptación de términos y condiciones
     if (!check) {
       Swal.fire({
         icon: "error",
@@ -161,7 +156,6 @@ const FormC = ({ idPage }) => {
       (user) => user.nombreUsuario === usuario
     );
 
-    // Valida que los campos no estén vacíos
     if (!usuario || !contrasenia) {
       return Swal.fire({
         icon: "error",
@@ -170,7 +164,6 @@ const FormC = ({ idPage }) => {
       });
     }
 
-    // Valida que el usuario exista en el localStorage
     if (!usuarioExiste) {
       Swal.fire({
         icon: "error",

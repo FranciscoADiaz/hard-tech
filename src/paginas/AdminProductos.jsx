@@ -50,14 +50,16 @@ const AdminProductos = () => {
   return (
     <div className="admin-productos-page">
       <Container className="py-5">
-        <div className="d-flex justify-content-between align-items-center mb-4">
+        <div className="mb-4 text-center text-md-start">
           <h2 className="titulo-admin">Administrar Productos</h2>
-          <button
-            className="btn-agregar"
-            onClick={() => navigate("/admin/productos/formulario")}
-          >
-            Agregar Producto
-          </button>
+          <div className="mt-3 mt-md-0">
+            <button
+              className="btn-agregar mt-3 mt-md-0"
+              onClick={() => navigate("/admin/productos/formulario")}
+            >
+              Agregar Producto
+            </button>
+          </div>
         </div>
 
         <TablaAdmin
