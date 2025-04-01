@@ -57,7 +57,7 @@ const FormAdmin = () => {
   return (
     <Container className="py-5 d-flex justify-content-center">
       <Form className="form-personalizado w-100" onSubmit={handleSubmit}>
-        <h2 className="form-titulo text-center">
+        <h2 className="form-titulo">
           {id ? "Editar producto" : "Agregar producto"}
         </h2>
 
@@ -69,8 +69,8 @@ const FormAdmin = () => {
             value={producto.titulo}
             onChange={handleChange}
             required
-            minLength={5}       
-            maxLength={100}               
+            minLength={5}
+            maxLength={100}
           />
         </Form.Group>
 
@@ -128,7 +128,7 @@ const FormAdmin = () => {
         </Form.Group>
 
         <div className="d-flex justify-content-center">
-          <button type="submit" className="btn-agregar">
+          <button type="submit" className="btn-agregar mt-3">
             {id ? "Guardar cambios" : "Agregar producto"}
           </button>
         </div>

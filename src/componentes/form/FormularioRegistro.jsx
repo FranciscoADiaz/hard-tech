@@ -101,6 +101,9 @@ const FormularioRegistro = () => {
                   name="usuario"
                   value={registro.usuario}
                   onChange={handleChange}
+                  minLength={5}
+                  maxLength={30}
+                  required
                 />
               </Form.Group>
 
@@ -112,6 +115,9 @@ const FormularioRegistro = () => {
                   name="email"
                   value={registro.email}
                   onChange={handleChange}
+                  minLength={5}
+                  maxLength={30}
+                  required
                 />
               </Form.Group>
 
@@ -123,6 +129,9 @@ const FormularioRegistro = () => {
                   name="contrasenia"
                   value={registro.contrasenia}
                   onChange={handleChange}
+                  required
+                  minLength={8}
+                  maxLength={30}
                 />
                 <Form.Text className="text-muted">
                   Mínimo 8 caracteres, una mayúscula y un número
@@ -137,6 +146,9 @@ const FormularioRegistro = () => {
                   name="repContrasenia"
                   value={registro.repContrasenia}
                   onChange={handleChange}
+                  required
+                  minLength={8}
+                  maxLength={30}
                 />
               </Form.Group>
 
@@ -147,6 +159,7 @@ const FormularioRegistro = () => {
                   label="Acepto los términos y condiciones"
                   checked={registro.check}
                   onChange={handleChange}
+                  required
                 />
               </Form.Group>
 
