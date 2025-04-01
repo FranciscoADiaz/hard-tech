@@ -22,10 +22,9 @@
   border: none;
 }
 
-/* TÍTULO más grande */
 .home-product-title {
   font-family: 'Orbitron', sans-serif;
-  font-size: 1.6rem;  /* Agrandado */
+  font-size: 1.6rem;  
   color: #8A2BE2;
   margin-bottom: 15px;
   white-space: nowrap;
@@ -33,10 +32,9 @@
   text-overflow: ellipsis;
 }
 
-/* DESCRIPCIÓN más grande */
 .home-product-description {
   font-family: 'Montserrat', sans-serif;
-  font-size: 1.3rem;  /* Agrandado */
+  font-size: 1.3rem;  
   color: #333;
   display: -webkit-box;
   -webkit-line-clamp: 2; 
@@ -47,16 +45,14 @@
   margin-bottom: 15px;
 }
 
-/* PRECIO más grande */
 .home-product-price {
   font-family: 'Montserrat', sans-serif;
-  font-size: 1.4rem;  /* Agrandado */
+  font-size: 1.4rem;  
   color: #333;
   font-weight: bold;
   margin-bottom: 15px;
 }
 
-/* BOTÓN */
 .home-btn-agregar {
   background-color: #8A2BE2;
   color: #fff;

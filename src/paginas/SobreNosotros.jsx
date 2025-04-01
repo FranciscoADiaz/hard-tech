@@ -15,7 +15,6 @@ const SobreNosotros = () => {
   return (
     <div className="sobre-nosotros-page">
       <Container className="sobre-nosotros my-5">
-        {/* Texto en línea recta */}
         <Row>
           <Col>
             <h2>Sobre Nosotros</h2>
@@ -27,7 +26,6 @@ const SobreNosotros = () => {
           </Col>
         </Row>
 
-        {/* Avatares en dos columnas */}
         <Row className="mt-5">
           <Col md={6} className="integrantes-columna">
             {integrantesCol1.map((integrante, index) => (

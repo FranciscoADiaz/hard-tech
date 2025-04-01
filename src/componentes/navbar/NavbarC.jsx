@@ -12,7 +12,7 @@ const NavbarC = () => {
     sessionStorage.removeItem("usuarioLogeado");
     navigate("/");
     setTimeout(() => {
-      window.location.reload(); // Refresca el navbar
+      window.location.reload(); 
     }, 100);
   };
 
