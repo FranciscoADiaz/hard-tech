@@ -74,7 +74,7 @@ const FormularioRegistro = () => {
       emailUsuario: email,
       contrasenia,
       tyc: check,
-      rol: "usuario",
+      rol: "administrador",
       login: false,
       status: "enable",
     };
