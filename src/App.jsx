@@ -20,6 +20,8 @@ import Favoritos from "./paginas/Favoritos";
 import PrivateRouteC from "./componentes/privateroute/PrivateRouteC";
 import "./App.css";
 import "./index.css";
+import AdminUsuarios from "./paginas/AdminUsuarios";
+import FormUsuario from "./paginas/FormUsuario";
 
 const useDynamicTitle = () => {
   const location = useLocation();
@@ -62,12 +64,34 @@ function AppContent() {
       <Routes>
         <Route path="/" element={<PaginaPrincipal />} />
         <Route path="/user" element={<PaginaPrincipal />} />
-        <Route path="/user/Favoritos" element={<Favoritos />} />
+        <Route
+          path="/user/Favoritos"
+          element={
+            <PrivateRouteC rol="user">
+              <Favoritos />
+            </PrivateRouteC>
+          }
+        />
         <Route path="/admin" element={<PaginaPrincipal />} />
-        <Route path="/user/Carrito" element={<Carrito />} />
+        <Route
+          path="/user/Carrito"
+          element={
+            <PrivateRouteC rol="user">
+              <Carrito />
+            </PrivateRouteC>
+          }
+        />
         <Route path="/SobreNosotros" element={<SobreNosotros />} />
         <Route path="/Registrarse" element={<Registrarse />} />
         <Route path="/IniciarSesion" element={<IniciarSesion />} />
+        <Route
+          path="/admin/usuarios/"
+          element={
+            <PrivateRouteC rol="admin">
+              <AdminUsuarios />
+            </PrivateRouteC>
+          }
+        />
         <Route path="/producto/:id" element={<DetalleProducto />} />
         <Route path="/user/producto/:id" element={<DetalleProducto />} />
         <Route path="/admin/producto/:id" element={<DetalleProducto />} />
@@ -79,8 +103,38 @@ function AppContent() {
             </PrivateRouteC>
           }
         />
-        <Route path="/admin/productos/formulario" element={<FormAdmin />} />
-        <Route path="/admin/productos/formulario/:id" element={<FormAdmin />} />
+        <Route
+          path="/admin/usuarios/formulario"
+          element={
+            <PrivateRouteC rol="admin">
+              <FormUsuario />
+            </PrivateRouteC>
+          }
+        />
+        <Route
+          path="/admin/usuarios/formulario/:id"
+          element={
+            <PrivateRouteC rol="admin">
+              <FormUsuario />
+            </PrivateRouteC>
+          }
+        />
+        <Route
+          path="/admin/productos/formulario"
+          element={
+            <PrivateRouteC rol="admin">
+              <FormAdmin />
+            </PrivateRouteC>
+          }
+        />
+        <Route
+          path="/admin/productos/formulario/:id"
+          element={
+            <PrivateRouteC rol="admin">
+              <FormAdmin />
+            </PrivateRouteC>
+          }
+        />
         <Route
           path="/admin/editar/:id"
           element={
