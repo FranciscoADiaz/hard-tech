@@ -15,7 +15,7 @@ const Favoritos = () => {
     <Container className="my-5">
       <h2 className="text-center mb-4 titulo-favoritos">Mis Favoritos ⭐</h2>
       {favoritos.length === 0 ? (
-        <p className="text-center">
+        <p className="text-center titulo-dos">
           Todavía no agregaste productos a favoritos.
         </p>
       ) : (

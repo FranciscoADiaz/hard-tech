@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
-import { Container, Row, Col, Button } from "react-bootstrap";
+import { Container, Row, Col } from "react-bootstrap";
 import "./DetalleProducto.css";
 
 const DetalleProducto = () => {
@@ -14,7 +14,6 @@ const DetalleProducto = () => {
     const productosTotales =
       JSON.parse(localStorage.getItem("productos")) || [];
 
-    // Si hay un producto seleccionado y el ID coincide
     if (productoSeleccionado) {
       const parseado = JSON.parse(productoSeleccionado);
       if (parseado.id === parseInt(id)) {
@@ -23,7 +22,6 @@ const DetalleProducto = () => {
       }
     }
 
-    // Si no lo encuentra, intenta buscarlo desde todos los productos
     const productoEncontrado = productosTotales.find(
       (p) => p.id === parseInt(id)
     );
@@ -32,7 +30,6 @@ const DetalleProducto = () => {
       return;
     }
 
-    // Si no se encuentra el producto en ningún lado
     Swal.fire({
       icon: "error",
       title: "Producto no encontrado",
@@ -54,6 +51,15 @@ const DetalleProducto = () => {
         showConfirmButton: false,
       });
       setTimeout(() => navigate("/IniciarSesion"), 2000);
+      return;
+    }
+
+    if (usuario.rol === "administrador") {
+      Swal.fire({
+        icon: "info",
+        title: "Función no disponible",
+        text: "Los administradores no pueden agregar productos al carrito.",
+      });
       return;
     }
 
