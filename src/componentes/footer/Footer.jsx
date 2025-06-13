@@ -2,6 +2,7 @@ import { NavLink } from "react-router-dom";
 import Container from "react-bootstrap/Container";
 import { FaInstagram, FaFacebook, FaTwitter, FaTiktok } from "react-icons/fa";
 import "./Footer.css";
+import logo from "../../assets/logo.png";
 
 export default function Footer() {
   return (
@@ -11,7 +12,7 @@ export default function Footer() {
           <div className="col-12 col-md-4 d-flex align-items-center justify-content-center">
             <NavLink to="/">
               <img
-                src="https://i.ibb.co/605nwL8L/LOSO-SIN-FONDO-1.png"
+                src={logo}
                 alt="Logo HardTech"
                 className="logo-footer"
               />
