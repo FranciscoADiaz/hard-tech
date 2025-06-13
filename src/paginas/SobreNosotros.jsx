@@ -1,15 +1,19 @@
 import { Container, Row, Col, Image } from "react-bootstrap";
 import "./SobreNosotros.css";
+import franciscoImg from "../assets/francisco.png";
+import tobiasImg from "../assets/tobias.png";
+import anaImg from "../assets/ana.png";
+import nicoImg from "../assets/nico.png";
 
 const SobreNosotros = () => {
   const integrantesCol1 = [
-    { nombre: "Nicolas", img: "https://i.ibb.co/Kj036HY9/Nico.jpg"},
-    { nombre: "Tobias", img: "https://i.ibb.co/Z6jZk95D/tobias.png"},
+    { nombre: "Nicolas", img: nicoImg },
+    { nombre: "Tobias", img: tobiasImg },
   ];
 
   const integrantesCol2 = [
-    { nombre: "Ana Paula", img: "https://i.ibb.co/67CgD1NC/Ana.jpg" },
-    { nombre: "Francisco", img: "https://i.ibb.co/fYbbMHv2/Franciscoo.png" },
+    { nombre: "Ana Paula", img: anaImg },
+    { nombre: "Francisco", img: franciscoImg },
   ];
 
   return (
