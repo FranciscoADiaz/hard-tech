@@ -4,29 +4,33 @@ import Swal from "sweetalert2";
 import { Container, Row, Col } from "react-bootstrap";
 import "./DetalleProducto.css";
 
+const STORAGE_KEY = "productos";
+const getAllProducts = () => {
+  const raw = JSON.parse(localStorage.getItem(STORAGE_KEY));
+  if (!raw) return [];
+  return Array.isArray(raw) ? raw : raw.items || [];
+};
+
 const DetalleProducto = () => {
   const { id } = useParams();
   const navigate = useNavigate();
   const [producto, setProducto] = useState(null);
 
   useEffect(() => {
-    const productoSeleccionado = localStorage.getItem("productoSeleccionado");
-    const productosTotales =
-      JSON.parse(localStorage.getItem("productos")) || [];
-
-    if (productoSeleccionado) {
-      const parseado = JSON.parse(productoSeleccionado);
-      if (parseado.id === parseInt(id)) {
-        setProducto(parseado);
-        return;
-      }
+    const cache = JSON.parse(
+      localStorage.getItem("productoSeleccionado") || "null"
+    );
+    if (cache && cache.id === Number(id)) {
+      setProducto(cache);
+      return;
     }
 
-    const productoEncontrado = productosTotales.find(
-      (p) => p.id === parseInt(id)
-    );
-    if (productoEncontrado) {
-      setProducto(productoEncontrado);
+    const lista = getAllProducts();
+    const found = lista.find((p) => p.id === Number(id));
+
+    if (found) {
+      setProducto(found);
+      localStorage.setItem("productoSeleccionado", JSON.stringify(found));
       return;
     }
 
@@ -63,8 +67,7 @@ const DetalleProducto = () => {
       return;
     }
 
-    const yaExiste = carrito.find((p) => p.id === producto.id);
-    if (yaExiste) {
+    if (carrito.some((p) => p.id === producto.id)) {
       Swal.fire({
         icon: "info",
         title: "Ya está en el carrito",
@@ -95,13 +98,14 @@ const DetalleProducto = () => {
         showConfirmButton: false,
       });
       setTimeout(() => navigate("/IniciarSesion"), 2000);
-    } else {
-      Swal.fire({
-        icon: "success",
-        title: "Función en desarrollo",
-        text: "Próximamente vas a poder pagar con MercadoPago 💳",
-      });
+      return;
     }
+
+    Swal.fire({
+      icon: "success",
+      title: "Función en desarrollo",
+      text: "Próximamente vas a poder pagar con MercadoPago 💳",
+    });
   };
 
   if (!producto) {
@@ -119,6 +123,7 @@ const DetalleProducto = () => {
               className="product-detail-image"
             />
           </Col>
+
           <Col md={6}>
             <h2 className="product-detail-title">{producto.titulo}</h2>
             <p className="product-detail-price">Precio: ${producto.precio}</p>
@@ -128,12 +133,14 @@ const DetalleProducto = () => {
             </p>
             <p className="product-detail-id">ID: {producto.id}</p>
 
-            <button
-              className="btn-agregar text-center"
-              onClick={agregarAlCarrito}
-            >
-              Agregar al carrito
-            </button>
+            <div className="d-flex gap-3 flex-wrap">
+              <button className="btn-agregar" onClick={agregarAlCarrito}>
+                Agregar al carrito
+              </button>
+              <button className="btn-agregar" onClick={comprarAhora}>
+                Comprar ahora
+              </button>
+            </div>
           </Col>
         </Row>
       </Container>

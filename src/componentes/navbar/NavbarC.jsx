@@ -3,6 +3,7 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import { NavLink, useNavigate } from "react-router-dom";
 import "./Navbar.css";
+import logo from "../../assets/logo.png";
 
 const NavbarC = () => {
   const navigate = useNavigate();
@@ -31,8 +32,8 @@ const NavbarC = () => {
       <Container>
         <span onClick={handleLogoClick} style={{ cursor: "pointer" }}>
           <img
-            src="https://i.ibb.co/605nwL8L/LOSO-SIN-FONDO-1.png"
-            alt="Logo"
+            src={logo}
+            alt="Logo"            
             className="logo-navbar"
           />
         </span>
