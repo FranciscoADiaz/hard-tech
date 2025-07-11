@@ -152,9 +152,10 @@ function AppContent() {
 
 function App() {
   return (
-    <Router basename="/hard-tech/">
-      <AppContent />
-    </Router>
+   <Router>
+    <AppContent />
+</Router>
+
   );
 }
 
